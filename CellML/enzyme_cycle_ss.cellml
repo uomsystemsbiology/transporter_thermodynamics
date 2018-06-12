@@ -1,0 +1,496 @@
+<?xml version='1.0'?>
+<model name="enzyme_cycle" xmlns="http://www.cellml.org/cellml/1.1#" xmlns:cellml="http://www.cellml.org/cellml/1.1#">
+    <units name="J_per_K_per_mol">
+        <unit units="joule"/>
+        <unit exponent="-1" units="kelvin"/>
+        <unit exponent="-1" units="mole"/>
+    </units>
+    <units name="C_per_mol">
+        <unit units="coulomb"/>
+        <unit exponent="-1" units="mole"/>
+    </units>
+    <component name="environment">
+        <!-- Time-->
+        <variable initial_value="0" name="t" units="second"/>
+        <!-- Physical parameters-->
+        <variable initial_value="8.314" name="R" units="J_per_K_per_mol"/>
+        <variable initial_value="310" name="T" units="kelvin"/>
+        <variable initial_value="96485" name="F" units="C_per_mol"/>
+        <!-- Bond graph parameters-->
+        <variable initial_value="1" name="K_E1" units="dimensionless"/>
+        <variable initial_value="1" name="K_E2" units="dimensionless"/>
+        <variable initial_value="1" name="K_Se" units="dimensionless"/>
+        <variable initial_value="1" name="K_Si" units="dimensionless"/>
+        <variable initial_value="1" name="kappa_1" units="dimensionless"/>
+        <variable initial_value="1" name="kappa_2" units="dimensionless"/>
+        <!-- Inputs-->
+        <!-- States (and initial conditions)-->
+        <variable initial_value="0.038835" name="x_E1" units="dimensionless"/>
+        <variable initial_value="1.961165" name="x_E2" units="dimensionless"/>
+        <variable initial_value="1" name="x_Se" units="dimensionless"/>
+        <variable initial_value="100" name="x_Si" units="dimensionless"/>
+        <!-- Output variables-->
+        <variable name="E_total" units="dimensionless"/>
+        <variable name="cyc_rate" units="dimensionless"/>
+        <variable name="DeltaG" units="dimensionless"/>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+                <eq/>
+                <ci>E_total</ci>
+                <apply>
+                    <plus/>
+                    <ci>x_E1</ci>
+                    <ci>x_E2</ci>
+                </apply>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>cyc_rate</ci>
+                <apply>
+                    <divide/>
+                    <ci>v_r1</ci>
+                    <ci>E_total</ci>
+                </apply>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>DeltaG</ci>
+                <apply>
+                    <minus/>
+                    <ci>mu_Se</ci>
+                    <ci>mu_Si</ci>
+                </apply>
+            </apply>
+        </math>
+        <!-- Bond variables-->
+        <variable name="e_1" units="dimensionless"/>
+        <variable name="e_2" units="dimensionless"/>
+        <variable name="e_3" units="dimensionless"/>
+        <variable name="e_4" units="dimensionless"/>
+        <variable name="e_5" units="dimensionless"/>
+        <variable name="e_6" units="dimensionless"/>
+        <variable name="e_7" units="dimensionless"/>
+        <variable name="e_8" units="dimensionless"/>
+        <variable name="e_9" units="dimensionless"/>
+        <variable name="e_10" units="dimensionless"/>
+        <variable name="e_11" units="dimensionless"/>
+        <variable name="e_12" units="dimensionless"/>
+        <variable name="f_1" units="dimensionless"/>
+        <variable name="f_2" units="dimensionless"/>
+        <variable name="f_3" units="dimensionless"/>
+        <variable name="f_4" units="dimensionless"/>
+        <variable name="f_5" units="dimensionless"/>
+        <variable name="f_6" units="dimensionless"/>
+        <variable name="f_7" units="dimensionless"/>
+        <variable name="f_8" units="dimensionless"/>
+        <variable name="f_9" units="dimensionless"/>
+        <variable name="f_10" units="dimensionless"/>
+        <variable name="f_11" units="dimensionless"/>
+        <variable name="f_12" units="dimensionless"/>
+        <!-- Constitutive equations
+ C:P1-->
+        <variable name="mu_E1" units="dimensionless"/>
+        <variable name="v_E1" units="dimensionless"/>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+                <eq/>
+                <ci>e_3</ci>
+                <ci>mu_E1</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>v_E1</ci>
+                <ci>f_3</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <apply>
+                    <diff/>
+                    <bvar>
+                        <ci>t</ci>
+                    </bvar>
+                    <ci>x_E1</ci>
+                </apply>
+                <ci>v_E1</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>mu_E1</ci>
+                <apply>
+                    <times/>
+                    <ci>R</ci>
+                    <ci>T</ci>
+                    <apply>
+                        <ln/>
+                        <apply>
+                            <times/>
+                            <ci>K_E1</ci>
+                            <ci>x_E1</ci>
+                        </apply>
+                    </apply>
+                </apply>
+            </apply>
+        </math>
+        <!-- C:P2-->
+        <variable name="mu_E2" units="dimensionless"/>
+        <variable name="v_E2" units="dimensionless"/>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+                <eq/>
+                <ci>e_7</ci>
+                <ci>mu_E2</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>v_E2</ci>
+                <ci>f_7</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <apply>
+                    <diff/>
+                    <bvar>
+                        <ci>t</ci>
+                    </bvar>
+                    <ci>x_E2</ci>
+                </apply>
+                <ci>v_E2</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>mu_E2</ci>
+                <apply>
+                    <times/>
+                    <ci>R</ci>
+                    <ci>T</ci>
+                    <apply>
+                        <ln/>
+                        <apply>
+                            <times/>
+                            <ci>K_E2</ci>
+                            <ci>x_E2</ci>
+                        </apply>
+                    </apply>
+                </apply>
+            </apply>
+        </math>
+        <!-- C:Se-->
+        <variable name="mu_Se" units="dimensionless"/>
+        <variable name="v_Se" units="dimensionless"/>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+                <eq/>
+                <ci>e_10</ci>
+                <ci>mu_Se</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>v_Se</ci>
+                <ci>f_10</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <apply>
+                    <diff/>
+                    <bvar>
+                        <ci>t</ci>
+                    </bvar>
+                    <ci>x_Se</ci>
+                </apply>
+                <cn cellml:units="dimensionless">1</cn>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>mu_Se</ci>
+                <apply>
+                    <times/>
+                    <ci>R</ci>
+                    <ci>T</ci>
+                    <apply>
+                        <ln/>
+                        <apply>
+                            <times/>
+                            <ci>K_Se</ci>
+                            <ci>x_Se</ci>
+                        </apply>
+                    </apply>
+                </apply>
+            </apply>
+        </math>
+        <!-- C:Si-->
+        <variable name="mu_Si" units="dimensionless"/>
+        <variable name="v_Si" units="dimensionless"/>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+                <eq/>
+                <ci>e_6</ci>
+                <ci>mu_Si</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>v_Si</ci>
+                <ci>f_6</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <apply>
+                    <diff/>
+                    <bvar>
+                        <ci>t</ci>
+                    </bvar>
+                    <ci>x_Si</ci>
+                </apply>
+                <cn cellml:units="dimensionless">0</cn>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>mu_Si</ci>
+                <apply>
+                    <times/>
+                    <ci>R</ci>
+                    <ci>T</ci>
+                    <apply>
+                        <ln/>
+                        <apply>
+                            <times/>
+                            <ci>K_Si</ci>
+                            <ci>x_Si</ci>
+                        </apply>
+                    </apply>
+                </apply>
+            </apply>
+        </math>
+        <!-- Re:r1-->
+        <variable name="Af_r1" units="dimensionless"/>
+        <variable name="Ar_r1" units="dimensionless"/>
+        <variable name="v_r1" units="dimensionless"/>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+                <eq/>
+                <ci>Af_r1</ci>
+                <ci>e_1</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>Ar_r1</ci>
+                <ci>e_4</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>f_1</ci>
+                <ci>v_r1</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>f_4</ci>
+                <ci>v_r1</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>v_r1</ci>
+                <apply>
+                    <times/>
+                    <ci>kappa_1</ci>
+                    <apply>
+                        <minus/>
+                        <apply>
+                            <exp/>
+                            <apply>
+                                <divide/>
+                                <ci>Af_r1</ci>
+                                <apply>
+                                    <times/>
+                                    <ci>R</ci>
+                                    <ci>T</ci>
+                                </apply>
+                            </apply>
+                        </apply>
+                        <apply>
+                            <exp/>
+                            <apply>
+                                <divide/>
+                                <ci>Ar_r1</ci>
+                                <apply>
+                                    <times/>
+                                    <ci>R</ci>
+                                    <ci>T</ci>
+                                </apply>
+                            </apply>
+                        </apply>
+                    </apply>
+                </apply>
+            </apply>
+        </math>
+        <!-- Re:r2-->
+        <variable name="Af_r2" units="dimensionless"/>
+        <variable name="Ar_r2" units="dimensionless"/>
+        <variable name="v_r2" units="dimensionless"/>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+                <eq/>
+                <ci>Af_r2</ci>
+                <ci>e_12</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>Ar_r2</ci>
+                <ci>e_11</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>f_12</ci>
+                <ci>v_r2</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>f_11</ci>
+                <ci>v_r2</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>v_r2</ci>
+                <apply>
+                    <times/>
+                    <ci>kappa_2</ci>
+                    <apply>
+                        <minus/>
+                        <apply>
+                            <exp/>
+                            <apply>
+                                <divide/>
+                                <ci>Af_r2</ci>
+                                <apply>
+                                    <times/>
+                                    <ci>R</ci>
+                                    <ci>T</ci>
+                                </apply>
+                            </apply>
+                        </apply>
+                        <apply>
+                            <exp/>
+                            <apply>
+                                <divide/>
+                                <ci>Ar_r2</ci>
+                                <apply>
+                                    <times/>
+                                    <ci>R</ci>
+                                    <ci>T</ci>
+                                </apply>
+                            </apply>
+                        </apply>
+                    </apply>
+                </apply>
+            </apply>
+            <!-- Junction equations
+ 0 junction #1-->
+            <apply>
+                <eq/>
+                <ci>e_2</ci>
+                <ci>e_3</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>e_8</ci>
+                <ci>e_3</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>f_3</ci>
+                <apply>
+                    <plus/>
+                    <apply>
+                        <minus/>
+                        <ci>f_2</ci>
+                    </apply>
+                    <ci>f_8</ci>
+                </apply>
+            </apply>
+            <!-- 0 junction #2-->
+            <apply>
+                <eq/>
+                <ci>e_4</ci>
+                <ci>e_7</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>e_12</ci>
+                <ci>e_7</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>f_7</ci>
+                <apply>
+                    <minus/>
+                    <ci>f_4</ci>
+                    <ci>f_12</ci>
+                </apply>
+            </apply>
+            <!-- 0 junction #3-->
+            <apply>
+                <eq/>
+                <ci>e_5</ci>
+                <ci>e_6</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>f_6</ci>
+                <apply>
+                    <minus/>
+                    <ci>f_5</ci>
+                </apply>
+            </apply>
+            <!-- 0 junction #4-->
+            <apply>
+                <eq/>
+                <ci>e_9</ci>
+                <ci>e_10</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>f_10</ci>
+                <ci>f_9</ci>
+            </apply>
+            <!-- 1 junction #1-->
+            <apply>
+                <eq/>
+                <ci>f_2</ci>
+                <ci>f_1</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>f_5</ci>
+                <ci>f_1</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>e_1</ci>
+                <apply>
+                    <plus/>
+                    <ci>e_2</ci>
+                    <ci>e_5</ci>
+                </apply>
+            </apply>
+            <!-- 1 junction #2-->
+            <apply>
+                <eq/>
+                <ci>f_8</ci>
+                <ci>f_11</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>f_9</ci>
+                <ci>f_11</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>e_11</ci>
+                <apply>
+                    <plus/>
+                    <ci>e_8</ci>
+                    <ci>e_9</ci>
+                </apply>
+            </apply>
+        </math>
+        <!-- Power conversion-->
+    </component>
+</model>

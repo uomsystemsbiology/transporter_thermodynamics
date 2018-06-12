@@ -1,0 +1,2127 @@
+<?xml version='1.0'?>
+<model name="SERCA_full" xmlns="http://www.cellml.org/cellml/1.1#" xmlns:cellml="http://www.cellml.org/cellml/1.1#">
+    <units name="J_per_K_per_mol">
+        <unit units="joule"/>
+        <unit exponent="-1" units="kelvin"/>
+        <unit exponent="-1" units="mole"/>
+    </units>
+    <units name="C_per_mol">
+        <unit units="coulomb"/>
+        <unit exponent="-1" units="mole"/>
+    </units>
+    <units name="fmol">
+        <unit prefix="femto" units="mole"/>
+    </units>
+    <units name="per_fmol">
+        <unit exponent="-1" units="fmol"/>
+    </units>
+    <units name="fmol_per_sec">
+        <unit units="fmol"/>
+        <unit exponent="-1" units="second"/>
+    </units>
+    <units name="J_per_mol">
+        <unit units="joule"/>
+        <unit exponent="-1" units="mole"/>
+    </units>
+    <units name="mM">
+        <unit prefix="milli" units="mole"/>
+        <unit exponent="-1" units="litre"/>
+    </units>
+    <units name="pL">
+        <unit prefix="pico" units="litre"/>
+    </units>
+    <units name="mM_per_sec">
+        <unit units="mM"/>
+        <unit exponent="-1" units="second"/>
+    </units>
+    <units name="J_per_mol_per_sec">
+        <unit units="joule"/>
+        <unit exponent="-1" units="mole"/>
+        <unit exponent="-1" units="second"/>
+    </units>
+    <component name="environment">
+        <!-- Time-->
+        <variable initial_value="0" name="t" units="second"/>
+        <!-- Physical parameters-->
+        <variable initial_value="8.31" name="R" units="J_per_K_per_mol"/>
+        <variable initial_value="310" name="T" units="kelvin"/>
+        <variable initial_value="96485" name="F" units="C_per_mol"/>
+        <!-- Bond graph parameters-->
+        <variable initial_value="159343.664" name="K_1" units="per_fmol"/>
+        <variable initial_value="675.4901" name="K_10" units="per_fmol"/>
+        <variable initial_value="2820.6572" name="K_2" units="per_fmol"/>
+        <variable initial_value="1653.1248" name="K_2a" units="per_fmol"/>
+        <variable initial_value="5690255.054" name="K_4" units="per_fmol"/>
+        <variable initial_value="0.55599" name="K_5" units="per_fmol"/>
+        <variable initial_value="1058849.2033" name="K_6" units="per_fmol"/>
+        <variable initial_value="86.6242" name="K_8" units="per_fmol"/>
+        <variable initial_value="2629.58" name="K_9" units="per_fmol"/>
+        <variable initial_value="1.2989" name="K_Cai" units="per_fmol"/>
+        <variable initial_value="21.6478" name="K_Casr" units="per_fmol"/>
+        <variable initial_value="1334.8712" name="K_H" units="per_fmol"/>
+        <variable initial_value="3.6559e-07" name="K_MgADP" units="per_fmol"/>
+        <variable initial_value="5.9845" name="K_MgATP" units="per_fmol"/>
+        <variable initial_value="0.00081084" name="K_P" units="per_fmol"/>
+        <variable initial_value="0.030348" name="kappa_101" units="fmol_per_sec"/>
+        <variable initial_value="0.00071475" name="kappa_12" units="fmol_per_sec"/>
+        <variable initial_value="15667298.869" name="kappa_22a" units="fmol_per_sec"/>
+        <variable initial_value="4551.6413" name="kappa_24" units="fmol_per_sec"/>
+        <variable initial_value="4551.6413" name="kappa_45" units="fmol_per_sec"/>
+        <variable initial_value="4568.3871" name="kappa_56" units="fmol_per_sec"/>
+        <variable initial_value="122733.0951" name="kappa_68" units="fmol_per_sec"/>
+        <variable initial_value="9849481.5849" name="kappa_89" units="fmol_per_sec"/>
+        <variable initial_value="9849481.5849" name="kappa_910" units="fmol_per_sec"/>
+        <variable initial_value="2" name="n_Cai" units="dimensionless"/>
+        <variable initial_value="2" name="n_Casr" units="dimensionless"/>
+        <variable initial_value="2" name="n_H" units="dimensionless"/>
+        <!-- States (and initial conditions)-->
+        <variable initial_value="0.0057" name="x_Ca_i" units="fmol"/>
+        <variable initial_value="x_Ca_sr0" name="x_Ca_sr" units="fmol"/>
+        <variable initial_value="0.004028" name="x_H" units="fmol"/>
+        <variable initial_value="1.3794" name="x_MgADP" units="fmol"/>
+        <variable initial_value="3.8" name="x_MgATP" units="fmol"/>
+        <variable initial_value="0.000483080262474619" name="x_P1" units="fmol"/>
+        <variable initial_value="570" name="x_Pi" units="fmol"/>
+        <variable initial_value="0.0574901665714893" name="x_P2" units="fmol"/>
+        <variable initial_value="0.527432709374309" name="x_P2a" units="fmol"/>
+        <variable initial_value="1.51828166697744e-09" name="x_P4" units="fmol"/>
+        <variable initial_value="0.000521958963378111" name="x_P5" units="fmol"/>
+        <variable initial_value="0.108047719535259" name="x_P10" units="fmol"/>
+        <variable initial_value="7.80744510783577e-05" name="x_P6" units="fmol"/>
+        <variable initial_value="0.156699110711707" name="x_P8" units="fmol"/>
+        <variable initial_value="0.149237178877487" name="x_P9" units="fmol"/>
+        <variable initial_value="0.05" name="c_Ca_sr0" units="mM"/>
+        <variable name="x_Ca_sr0" units="fmol"/>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+                <eq/>
+                <ci>x_Ca_sr0</ci>
+                <apply>
+                    <times/>
+                    <ci>c_Ca_sr0</ci>
+                    <ci>vol_sr</ci>
+                </apply>
+            </apply>
+        </math>
+        <!-- Concentrations-->
+        <variable name="c_Ca_i" units="mM"/>
+        <variable name="c_Ca_sr" units="mM"/>
+        <variable name="c_H" units="mM"/>
+        <variable name="c_MgADP" units="mM"/>
+        <variable name="c_MgATP" units="mM"/>
+        <variable name="c_Pi" units="mM"/>
+        <variable initial_value="38.0" name="vol_i" units="pL"/>
+        <variable initial_value="2.28" name="vol_sr" units="pL"/>
+        <variable name="vol_isr" units="pL"/>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+                <eq/>
+                <ci>vol_isr</ci>
+                <apply>
+                    <plus/>
+                    <ci>vol_i</ci>
+                    <ci>vol_sr</ci>
+                </apply>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>c_Ca_i</ci>
+                <apply>
+                    <divide/>
+                    <ci>x_Ca_i</ci>
+                    <ci>vol_i</ci>
+                </apply>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>c_Ca_sr</ci>
+                <apply>
+                    <divide/>
+                    <ci>x_Ca_sr</ci>
+                    <ci>vol_sr</ci>
+                </apply>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>c_H</ci>
+                <apply>
+                    <divide/>
+                    <ci>x_H</ci>
+                    <ci>vol_isr</ci>
+                </apply>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>c_MgADP</ci>
+                <apply>
+                    <divide/>
+                    <ci>x_MgADP</ci>
+                    <ci>vol_i</ci>
+                </apply>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>c_MgATP</ci>
+                <apply>
+                    <divide/>
+                    <ci>x_MgATP</ci>
+                    <ci>vol_i</ci>
+                </apply>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>c_Pi</ci>
+                <apply>
+                    <divide/>
+                    <ci>x_Pi</ci>
+                    <ci>vol_i</ci>
+                </apply>
+            </apply>
+        </math>
+        <!-- Output variables-->
+        <variable name="DeltaG" units="J_per_mol"/>
+        <variable name="power" units="J_per_mol_per_sec"/>
+        <variable name="A_hyd" units="J_per_mol"/>
+        <variable name="A_tr" units="J_per_mol"/>
+        <variable name="efficiency" units="dimensionless"/>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+                <eq/>
+                <ci>DeltaG</ci>
+                <apply>
+                    <minus/>
+                    <apply>
+                        <minus/>
+                        <apply>
+                            <plus/>
+                            <apply>
+                                <times/>
+                                <cn cellml:units="dimensionless">2</cn>
+                                <ci>mu_Ca_sr</ci>
+                            </apply>
+                            <ci>mu_MgADP</ci>
+                            <ci>mu_Pi</ci>
+                            <ci>mu_H</ci>
+                        </apply>
+                        <apply>
+                            <times/>
+                            <cn cellml:units="dimensionless">2</cn>
+                            <ci>mu_Ca_i</ci>
+                        </apply>
+                    </apply>
+                    <ci>mu_MgATP</ci>
+                </apply>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>power</ci>
+                <apply>
+                    <times/>
+                    <apply>
+                        <minus/>
+                        <ci>DeltaG</ci>
+                    </apply>
+                    <ci>v_R1_2</ci>
+                </apply>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>A_hyd</ci>
+                <apply>
+                    <minus/>
+                    <apply>
+                        <minus/>
+                        <apply>
+                            <minus/>
+                            <ci>mu_MgATP</ci>
+                            <ci>mu_MgADP</ci>
+                        </apply>
+                        <ci>mu_Pi</ci>
+                    </apply>
+                    <ci>mu_H</ci>
+                </apply>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>A_tr</ci>
+                <apply>
+                    <minus/>
+                    <apply>
+                        <times/>
+                        <cn cellml:units="dimensionless">2</cn>
+                        <ci>mu_Ca_i</ci>
+                    </apply>
+                    <apply>
+                        <times/>
+                        <cn cellml:units="dimensionless">2</cn>
+                        <ci>mu_Ca_sr</ci>
+                    </apply>
+                </apply>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>efficiency</ci>
+                <piecewise>
+                    <piece>
+                        <apply>
+                            <divide/>
+                            <apply>
+                                <minus/>
+                                <ci>A_tr</ci>
+                            </apply>
+                            <ci>A_hyd</ci>
+                        </apply>
+                        <apply>
+                            <geq/>
+                            <ci>A_hyd</ci>
+                            <apply>
+                                <minus/>
+                                <ci>A_tr</ci>
+                            </apply>
+                        </apply>
+                    </piece>
+                    <otherwise>
+                        <apply>
+                            <divide/>
+                            <apply>
+                                <minus/>
+                                <ci>A_hyd</ci>
+                            </apply>
+                            <ci>A_tr</ci>
+                        </apply>
+                    </otherwise>
+                </piecewise>
+            </apply>
+        </math>
+        <!-- Bond variables-->
+        <variable name="e_1" units="J_per_mol"/>
+        <variable name="e_2" units="J_per_mol"/>
+        <variable name="e_3" units="J_per_mol"/>
+        <variable name="e_4" units="J_per_mol"/>
+        <variable name="e_5" units="J_per_mol"/>
+        <variable name="e_6" units="J_per_mol"/>
+        <variable name="e_7" units="J_per_mol"/>
+        <variable name="e_8" units="J_per_mol"/>
+        <variable name="e_9" units="J_per_mol"/>
+        <variable name="e_10" units="J_per_mol"/>
+        <variable name="e_11" units="J_per_mol"/>
+        <variable name="e_12" units="J_per_mol"/>
+        <variable name="e_13" units="J_per_mol"/>
+        <variable name="e_14" units="J_per_mol"/>
+        <variable name="e_15" units="J_per_mol"/>
+        <variable name="e_16" units="J_per_mol"/>
+        <variable name="e_17" units="J_per_mol"/>
+        <variable name="e_18" units="J_per_mol"/>
+        <variable name="e_19" units="J_per_mol"/>
+        <variable name="e_20" units="J_per_mol"/>
+        <variable name="e_21" units="J_per_mol"/>
+        <variable name="e_22" units="J_per_mol"/>
+        <variable name="e_23" units="J_per_mol"/>
+        <variable name="e_24" units="J_per_mol"/>
+        <variable name="e_25" units="J_per_mol"/>
+        <variable name="e_26" units="J_per_mol"/>
+        <variable name="e_27" units="J_per_mol"/>
+        <variable name="e_28" units="J_per_mol"/>
+        <variable name="e_29" units="J_per_mol"/>
+        <variable name="e_30" units="J_per_mol"/>
+        <variable name="e_31" units="J_per_mol"/>
+        <variable name="e_32" units="J_per_mol"/>
+        <variable name="e_33" units="J_per_mol"/>
+        <variable name="e_34" units="J_per_mol"/>
+        <variable name="e_35" units="J_per_mol"/>
+        <variable name="e_36" units="J_per_mol"/>
+        <variable name="e_37" units="J_per_mol"/>
+        <variable name="e_38" units="J_per_mol"/>
+        <variable name="e_39" units="J_per_mol"/>
+        <variable name="e_40" units="J_per_mol"/>
+        <variable name="e_41" units="J_per_mol"/>
+        <variable name="e_42" units="J_per_mol"/>
+        <variable name="e_43" units="J_per_mol"/>
+        <variable name="e_44" units="J_per_mol"/>
+        <variable name="e_45" units="J_per_mol"/>
+        <variable name="e_46" units="J_per_mol"/>
+        <variable name="e_47" units="J_per_mol"/>
+        <variable name="e_48" units="J_per_mol"/>
+        <variable name="e_49" units="J_per_mol"/>
+        <variable name="e_50" units="J_per_mol"/>
+        <variable name="e_51" units="J_per_mol"/>
+        <variable name="e_52" units="J_per_mol"/>
+        <variable name="e_53" units="J_per_mol"/>
+        <variable name="f_1" units="fmol_per_sec"/>
+        <variable name="f_2" units="fmol_per_sec"/>
+        <variable name="f_3" units="fmol_per_sec"/>
+        <variable name="f_4" units="fmol_per_sec"/>
+        <variable name="f_5" units="fmol_per_sec"/>
+        <variable name="f_6" units="fmol_per_sec"/>
+        <variable name="f_7" units="fmol_per_sec"/>
+        <variable name="f_8" units="fmol_per_sec"/>
+        <variable name="f_9" units="fmol_per_sec"/>
+        <variable name="f_10" units="fmol_per_sec"/>
+        <variable name="f_11" units="fmol_per_sec"/>
+        <variable name="f_12" units="fmol_per_sec"/>
+        <variable name="f_13" units="fmol_per_sec"/>
+        <variable name="f_14" units="fmol_per_sec"/>
+        <variable name="f_15" units="fmol_per_sec"/>
+        <variable name="f_16" units="fmol_per_sec"/>
+        <variable name="f_17" units="fmol_per_sec"/>
+        <variable name="f_18" units="fmol_per_sec"/>
+        <variable name="f_19" units="fmol_per_sec"/>
+        <variable name="f_20" units="fmol_per_sec"/>
+        <variable name="f_21" units="fmol_per_sec"/>
+        <variable name="f_22" units="fmol_per_sec"/>
+        <variable name="f_23" units="fmol_per_sec"/>
+        <variable name="f_24" units="fmol_per_sec"/>
+        <variable name="f_25" units="fmol_per_sec"/>
+        <variable name="f_26" units="fmol_per_sec"/>
+        <variable name="f_27" units="fmol_per_sec"/>
+        <variable name="f_28" units="fmol_per_sec"/>
+        <variable name="f_29" units="fmol_per_sec"/>
+        <variable name="f_30" units="fmol_per_sec"/>
+        <variable name="f_31" units="fmol_per_sec"/>
+        <variable name="f_32" units="fmol_per_sec"/>
+        <variable name="f_33" units="fmol_per_sec"/>
+        <variable name="f_34" units="fmol_per_sec"/>
+        <variable name="f_35" units="fmol_per_sec"/>
+        <variable name="f_36" units="fmol_per_sec"/>
+        <variable name="f_37" units="fmol_per_sec"/>
+        <variable name="f_38" units="fmol_per_sec"/>
+        <variable name="f_39" units="fmol_per_sec"/>
+        <variable name="f_40" units="fmol_per_sec"/>
+        <variable name="f_41" units="fmol_per_sec"/>
+        <variable name="f_42" units="fmol_per_sec"/>
+        <variable name="f_43" units="fmol_per_sec"/>
+        <variable name="f_44" units="fmol_per_sec"/>
+        <variable name="f_45" units="fmol_per_sec"/>
+        <variable name="f_46" units="fmol_per_sec"/>
+        <variable name="f_47" units="fmol_per_sec"/>
+        <variable name="f_48" units="fmol_per_sec"/>
+        <variable name="f_49" units="fmol_per_sec"/>
+        <variable name="f_50" units="fmol_per_sec"/>
+        <variable name="f_51" units="fmol_per_sec"/>
+        <variable name="f_52" units="fmol_per_sec"/>
+        <variable name="f_53" units="fmol_per_sec"/>
+        <!-- Constitutive equations
+ C:Ca_i-->
+        <variable name="mu_Ca_i" units="J_per_mol"/>
+        <variable name="v_Ca_i" units="fmol_per_sec"/>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+                <eq/>
+                <ci>e_4</ci>
+                <ci>mu_Ca_i</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>v_Ca_i</ci>
+                <ci>f_4</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <apply>
+                    <diff/>
+                    <bvar>
+                        <ci>t</ci>
+                    </bvar>
+                    <ci>x_Ca_i</ci>
+                </apply>
+                <cn cellml:units="fmol_per_sec">0</cn>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>mu_Ca_i</ci>
+                <apply>
+                    <times/>
+                    <ci>R</ci>
+                    <ci>T</ci>
+                    <apply>
+                        <ln/>
+                        <apply>
+                            <times/>
+                            <ci>K_Cai</ci>
+                            <ci>x_Ca_i</ci>
+                        </apply>
+                    </apply>
+                </apply>
+            </apply>
+        </math>
+        <!-- C:Ca_sr-->
+        <variable name="mu_Ca_sr" units="J_per_mol"/>
+        <variable name="v_Ca_sr" units="fmol_per_sec"/>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+                <eq/>
+                <ci>e_7</ci>
+                <ci>mu_Ca_sr</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>v_Ca_sr</ci>
+                <ci>f_7</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <apply>
+                    <diff/>
+                    <bvar>
+                        <ci>t</ci>
+                    </bvar>
+                    <ci>x_Ca_sr</ci>
+                </apply>
+                <apply>
+                    <times/>
+                    <cn cellml:units="mM_per_sec">0.01</cn>
+                    <ci>vol_sr</ci>
+                </apply>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>mu_Ca_sr</ci>
+                <apply>
+                    <times/>
+                    <ci>R</ci>
+                    <ci>T</ci>
+                    <apply>
+                        <ln/>
+                        <apply>
+                            <times/>
+                            <ci>K_Casr</ci>
+                            <ci>x_Ca_sr</ci>
+                        </apply>
+                    </apply>
+                </apply>
+            </apply>
+        </math>
+        <!-- C:H-->
+        <variable name="mu_H" units="J_per_mol"/>
+        <variable name="v_H" units="fmol_per_sec"/>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+                <eq/>
+                <ci>e_11</ci>
+                <ci>mu_H</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>v_H</ci>
+                <ci>f_11</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <apply>
+                    <diff/>
+                    <bvar>
+                        <ci>t</ci>
+                    </bvar>
+                    <ci>x_H</ci>
+                </apply>
+                <cn cellml:units="fmol_per_sec">0</cn>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>mu_H</ci>
+                <apply>
+                    <times/>
+                    <ci>R</ci>
+                    <ci>T</ci>
+                    <apply>
+                        <ln/>
+                        <apply>
+                            <times/>
+                            <ci>K_H</ci>
+                            <ci>x_H</ci>
+                        </apply>
+                    </apply>
+                </apply>
+            </apply>
+        </math>
+        <!-- C:MgADP-->
+        <variable name="mu_MgADP" units="J_per_mol"/>
+        <variable name="v_MgADP" units="fmol_per_sec"/>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+                <eq/>
+                <ci>e_6</ci>
+                <ci>mu_MgADP</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>v_MgADP</ci>
+                <ci>f_6</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <apply>
+                    <diff/>
+                    <bvar>
+                        <ci>t</ci>
+                    </bvar>
+                    <ci>x_MgADP</ci>
+                </apply>
+                <cn cellml:units="fmol_per_sec">0</cn>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>mu_MgADP</ci>
+                <apply>
+                    <times/>
+                    <ci>R</ci>
+                    <ci>T</ci>
+                    <apply>
+                        <ln/>
+                        <apply>
+                            <times/>
+                            <ci>K_MgADP</ci>
+                            <ci>x_MgADP</ci>
+                        </apply>
+                    </apply>
+                </apply>
+            </apply>
+        </math>
+        <!-- C:MgATP-->
+        <variable name="mu_MgATP" units="J_per_mol"/>
+        <variable name="v_MgATP" units="fmol_per_sec"/>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+                <eq/>
+                <ci>e_17</ci>
+                <ci>mu_MgATP</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>v_MgATP</ci>
+                <apply>
+                    <minus/>
+                    <ci>f_17</ci>
+                </apply>
+            </apply>
+            <apply>
+                <eq/>
+                <apply>
+                    <diff/>
+                    <bvar>
+                        <ci>t</ci>
+                    </bvar>
+                    <ci>x_MgATP</ci>
+                </apply>
+                <cn cellml:units="fmol_per_sec">0</cn>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>mu_MgATP</ci>
+                <apply>
+                    <times/>
+                    <ci>R</ci>
+                    <ci>T</ci>
+                    <apply>
+                        <ln/>
+                        <apply>
+                            <times/>
+                            <ci>K_MgATP</ci>
+                            <ci>x_MgATP</ci>
+                        </apply>
+                    </apply>
+                </apply>
+            </apply>
+        </math>
+        <!-- C:P1-->
+        <variable name="mu_P1" units="J_per_mol"/>
+        <variable name="v_P1" units="fmol_per_sec"/>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+                <eq/>
+                <ci>e_1</ci>
+                <ci>mu_P1</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>v_P1</ci>
+                <ci>f_1</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <apply>
+                    <diff/>
+                    <bvar>
+                        <ci>t</ci>
+                    </bvar>
+                    <ci>x_P1</ci>
+                </apply>
+                <ci>v_P1</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>mu_P1</ci>
+                <apply>
+                    <times/>
+                    <ci>R</ci>
+                    <ci>T</ci>
+                    <apply>
+                        <ln/>
+                        <apply>
+                            <times/>
+                            <ci>K_1</ci>
+                            <ci>x_P1</ci>
+                        </apply>
+                    </apply>
+                </apply>
+            </apply>
+        </math>
+        <!-- C:Pi-->
+        <variable name="mu_Pi" units="J_per_mol"/>
+        <variable name="v_Pi" units="fmol_per_sec"/>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+                <eq/>
+                <ci>e_13</ci>
+                <ci>mu_Pi</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>v_Pi</ci>
+                <ci>f_13</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <apply>
+                    <diff/>
+                    <bvar>
+                        <ci>t</ci>
+                    </bvar>
+                    <ci>x_Pi</ci>
+                </apply>
+                <cn cellml:units="fmol_per_sec">0</cn>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>mu_Pi</ci>
+                <apply>
+                    <times/>
+                    <ci>R</ci>
+                    <ci>T</ci>
+                    <apply>
+                        <ln/>
+                        <apply>
+                            <times/>
+                            <ci>K_P</ci>
+                            <ci>x_Pi</ci>
+                        </apply>
+                    </apply>
+                </apply>
+            </apply>
+        </math>
+        <!-- Re:R10_1-->
+        <variable name="Af_R10_1" units="J_per_mol"/>
+        <variable name="Ar_R10_1" units="J_per_mol"/>
+        <variable name="v_R10_1" units="fmol_per_sec"/>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+                <eq/>
+                <ci>Af_R10_1</ci>
+                <ci>e_16</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>Ar_R10_1</ci>
+                <ci>e_12</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>f_16</ci>
+                <ci>v_R10_1</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>f_12</ci>
+                <ci>v_R10_1</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>v_R10_1</ci>
+                <apply>
+                    <times/>
+                    <ci>kappa_101</ci>
+                    <apply>
+                        <minus/>
+                        <apply>
+                            <exp/>
+                            <apply>
+                                <divide/>
+                                <ci>Af_R10_1</ci>
+                                <apply>
+                                    <times/>
+                                    <ci>R</ci>
+                                    <ci>T</ci>
+                                </apply>
+                            </apply>
+                        </apply>
+                        <apply>
+                            <exp/>
+                            <apply>
+                                <divide/>
+                                <ci>Ar_R10_1</ci>
+                                <apply>
+                                    <times/>
+                                    <ci>R</ci>
+                                    <ci>T</ci>
+                                </apply>
+                            </apply>
+                        </apply>
+                    </apply>
+                </apply>
+            </apply>
+        </math>
+        <!-- Re:R1_2-->
+        <variable name="Af_R1_2" units="J_per_mol"/>
+        <variable name="Ar_R1_2" units="J_per_mol"/>
+        <variable name="v_R1_2" units="fmol_per_sec"/>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+                <eq/>
+                <ci>Af_R1_2</ci>
+                <ci>e_3</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>Ar_R1_2</ci>
+                <ci>e_9</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>f_3</ci>
+                <ci>v_R1_2</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>f_9</ci>
+                <ci>v_R1_2</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>v_R1_2</ci>
+                <apply>
+                    <times/>
+                    <ci>kappa_12</ci>
+                    <apply>
+                        <minus/>
+                        <apply>
+                            <exp/>
+                            <apply>
+                                <divide/>
+                                <ci>Af_R1_2</ci>
+                                <apply>
+                                    <times/>
+                                    <ci>R</ci>
+                                    <ci>T</ci>
+                                </apply>
+                            </apply>
+                        </apply>
+                        <apply>
+                            <exp/>
+                            <apply>
+                                <divide/>
+                                <ci>Ar_R1_2</ci>
+                                <apply>
+                                    <times/>
+                                    <ci>R</ci>
+                                    <ci>T</ci>
+                                </apply>
+                            </apply>
+                        </apply>
+                    </apply>
+                </apply>
+            </apply>
+        </math>
+        <!-- Re:R5_6-->
+        <variable name="Af_R5_6" units="J_per_mol"/>
+        <variable name="Ar_R5_6" units="J_per_mol"/>
+        <variable name="v_R5_6" units="fmol_per_sec"/>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+                <eq/>
+                <ci>Af_R5_6</ci>
+                <ci>e_14</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>Ar_R5_6</ci>
+                <ci>e_5</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>f_14</ci>
+                <ci>v_R5_6</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>f_5</ci>
+                <ci>v_R5_6</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>v_R5_6</ci>
+                <apply>
+                    <times/>
+                    <ci>kappa_56</ci>
+                    <apply>
+                        <minus/>
+                        <apply>
+                            <exp/>
+                            <apply>
+                                <divide/>
+                                <ci>Af_R5_6</ci>
+                                <apply>
+                                    <times/>
+                                    <ci>R</ci>
+                                    <ci>T</ci>
+                                </apply>
+                            </apply>
+                        </apply>
+                        <apply>
+                            <exp/>
+                            <apply>
+                                <divide/>
+                                <ci>Ar_R5_6</ci>
+                                <apply>
+                                    <times/>
+                                    <ci>R</ci>
+                                    <ci>T</ci>
+                                </apply>
+                            </apply>
+                        </apply>
+                    </apply>
+                </apply>
+            </apply>
+        </math>
+        <!-- C:P2-->
+        <variable name="mu_P2" units="J_per_mol"/>
+        <variable name="v_P2" units="fmol_per_sec"/>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+                <eq/>
+                <ci>e_20</ci>
+                <ci>mu_P2</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>v_P2</ci>
+                <ci>f_20</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <apply>
+                    <diff/>
+                    <bvar>
+                        <ci>t</ci>
+                    </bvar>
+                    <ci>x_P2</ci>
+                </apply>
+                <ci>v_P2</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>mu_P2</ci>
+                <apply>
+                    <times/>
+                    <ci>R</ci>
+                    <ci>T</ci>
+                    <apply>
+                        <ln/>
+                        <apply>
+                            <times/>
+                            <ci>K_2</ci>
+                            <ci>x_P2</ci>
+                        </apply>
+                    </apply>
+                </apply>
+            </apply>
+        </math>
+        <!-- C:P2a-->
+        <variable name="mu_P2a" units="J_per_mol"/>
+        <variable name="v_P2a" units="fmol_per_sec"/>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+                <eq/>
+                <ci>e_25</ci>
+                <ci>mu_P2a</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>v_P2a</ci>
+                <ci>f_25</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <apply>
+                    <diff/>
+                    <bvar>
+                        <ci>t</ci>
+                    </bvar>
+                    <ci>x_P2a</ci>
+                </apply>
+                <ci>v_P2a</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>mu_P2a</ci>
+                <apply>
+                    <times/>
+                    <ci>R</ci>
+                    <ci>T</ci>
+                    <apply>
+                        <ln/>
+                        <apply>
+                            <times/>
+                            <ci>K_2a</ci>
+                            <ci>x_P2a</ci>
+                        </apply>
+                    </apply>
+                </apply>
+            </apply>
+        </math>
+        <!-- C:P4-->
+        <variable name="mu_P4" units="J_per_mol"/>
+        <variable name="v_P4" units="fmol_per_sec"/>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+                <eq/>
+                <ci>e_26</ci>
+                <ci>mu_P4</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>v_P4</ci>
+                <ci>f_26</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <apply>
+                    <diff/>
+                    <bvar>
+                        <ci>t</ci>
+                    </bvar>
+                    <ci>x_P4</ci>
+                </apply>
+                <ci>v_P4</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>mu_P4</ci>
+                <apply>
+                    <times/>
+                    <ci>R</ci>
+                    <ci>T</ci>
+                    <apply>
+                        <ln/>
+                        <apply>
+                            <times/>
+                            <ci>K_4</ci>
+                            <ci>x_P4</ci>
+                        </apply>
+                    </apply>
+                </apply>
+            </apply>
+        </math>
+        <!-- C:P5-->
+        <variable name="mu_P5" units="J_per_mol"/>
+        <variable name="v_P5" units="fmol_per_sec"/>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+                <eq/>
+                <ci>e_33</ci>
+                <ci>mu_P5</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>v_P5</ci>
+                <ci>f_33</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <apply>
+                    <diff/>
+                    <bvar>
+                        <ci>t</ci>
+                    </bvar>
+                    <ci>x_P5</ci>
+                </apply>
+                <ci>v_P5</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>mu_P5</ci>
+                <apply>
+                    <times/>
+                    <ci>R</ci>
+                    <ci>T</ci>
+                    <apply>
+                        <ln/>
+                        <apply>
+                            <times/>
+                            <ci>K_5</ci>
+                            <ci>x_P5</ci>
+                        </apply>
+                    </apply>
+                </apply>
+            </apply>
+        </math>
+        <!-- Re:R2_2a-->
+        <variable name="Af_R2_2a" units="J_per_mol"/>
+        <variable name="Ar_R2_2a" units="J_per_mol"/>
+        <variable name="v_R2_2a" units="fmol_per_sec"/>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+                <eq/>
+                <ci>Af_R2_2a</ci>
+                <ci>e_23</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>Ar_R2_2a</ci>
+                <ci>e_25</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>f_23</ci>
+                <ci>v_R2_2a</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>f_25</ci>
+                <ci>v_R2_2a</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>v_R2_2a</ci>
+                <apply>
+                    <times/>
+                    <ci>kappa_22a</ci>
+                    <apply>
+                        <minus/>
+                        <apply>
+                            <exp/>
+                            <apply>
+                                <divide/>
+                                <ci>Af_R2_2a</ci>
+                                <apply>
+                                    <times/>
+                                    <ci>R</ci>
+                                    <ci>T</ci>
+                                </apply>
+                            </apply>
+                        </apply>
+                        <apply>
+                            <exp/>
+                            <apply>
+                                <divide/>
+                                <ci>Ar_R2_2a</ci>
+                                <apply>
+                                    <times/>
+                                    <ci>R</ci>
+                                    <ci>T</ci>
+                                </apply>
+                            </apply>
+                        </apply>
+                    </apply>
+                </apply>
+            </apply>
+        </math>
+        <!-- Re:R2_4-->
+        <variable name="Af_R2_4" units="J_per_mol"/>
+        <variable name="Ar_R2_4" units="J_per_mol"/>
+        <variable name="v_R2_4" units="fmol_per_sec"/>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+                <eq/>
+                <ci>Af_R2_4</ci>
+                <ci>e_28</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>Ar_R2_4</ci>
+                <ci>e_27</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>f_28</ci>
+                <ci>v_R2_4</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>f_27</ci>
+                <ci>v_R2_4</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>v_R2_4</ci>
+                <apply>
+                    <times/>
+                    <ci>kappa_24</ci>
+                    <apply>
+                        <minus/>
+                        <apply>
+                            <exp/>
+                            <apply>
+                                <divide/>
+                                <ci>Af_R2_4</ci>
+                                <apply>
+                                    <times/>
+                                    <ci>R</ci>
+                                    <ci>T</ci>
+                                </apply>
+                            </apply>
+                        </apply>
+                        <apply>
+                            <exp/>
+                            <apply>
+                                <divide/>
+                                <ci>Ar_R2_4</ci>
+                                <apply>
+                                    <times/>
+                                    <ci>R</ci>
+                                    <ci>T</ci>
+                                </apply>
+                            </apply>
+                        </apply>
+                    </apply>
+                </apply>
+            </apply>
+        </math>
+        <!-- Re:R4_5-->
+        <variable name="Af_R4_5" units="J_per_mol"/>
+        <variable name="Ar_R4_5" units="J_per_mol"/>
+        <variable name="v_R4_5" units="fmol_per_sec"/>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+                <eq/>
+                <ci>Af_R4_5</ci>
+                <ci>e_31</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>Ar_R4_5</ci>
+                <ci>e_30</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>f_31</ci>
+                <ci>v_R4_5</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>f_30</ci>
+                <ci>v_R4_5</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>v_R4_5</ci>
+                <apply>
+                    <times/>
+                    <ci>kappa_45</ci>
+                    <apply>
+                        <minus/>
+                        <apply>
+                            <exp/>
+                            <apply>
+                                <divide/>
+                                <ci>Af_R4_5</ci>
+                                <apply>
+                                    <times/>
+                                    <ci>R</ci>
+                                    <ci>T</ci>
+                                </apply>
+                            </apply>
+                        </apply>
+                        <apply>
+                            <exp/>
+                            <apply>
+                                <divide/>
+                                <ci>Ar_R4_5</ci>
+                                <apply>
+                                    <times/>
+                                    <ci>R</ci>
+                                    <ci>T</ci>
+                                </apply>
+                            </apply>
+                        </apply>
+                    </apply>
+                </apply>
+            </apply>
+        </math>
+        <!-- C:P10-->
+        <variable name="mu_P10" units="J_per_mol"/>
+        <variable name="v_P10" units="fmol_per_sec"/>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+                <eq/>
+                <ci>e_53</ci>
+                <ci>mu_P10</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>v_P10</ci>
+                <ci>f_53</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <apply>
+                    <diff/>
+                    <bvar>
+                        <ci>t</ci>
+                    </bvar>
+                    <ci>x_P10</ci>
+                </apply>
+                <ci>v_P10</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>mu_P10</ci>
+                <apply>
+                    <times/>
+                    <ci>R</ci>
+                    <ci>T</ci>
+                    <apply>
+                        <ln/>
+                        <apply>
+                            <times/>
+                            <ci>K_10</ci>
+                            <ci>x_P10</ci>
+                        </apply>
+                    </apply>
+                </apply>
+            </apply>
+        </math>
+        <!-- C:P6-->
+        <variable name="mu_P6" units="J_per_mol"/>
+        <variable name="v_P6" units="fmol_per_sec"/>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+                <eq/>
+                <ci>e_42</ci>
+                <ci>mu_P6</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>v_P6</ci>
+                <ci>f_42</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <apply>
+                    <diff/>
+                    <bvar>
+                        <ci>t</ci>
+                    </bvar>
+                    <ci>x_P6</ci>
+                </apply>
+                <ci>v_P6</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>mu_P6</ci>
+                <apply>
+                    <times/>
+                    <ci>R</ci>
+                    <ci>T</ci>
+                    <apply>
+                        <ln/>
+                        <apply>
+                            <times/>
+                            <ci>K_6</ci>
+                            <ci>x_P6</ci>
+                        </apply>
+                    </apply>
+                </apply>
+            </apply>
+        </math>
+        <!-- C:P8-->
+        <variable name="mu_P8" units="J_per_mol"/>
+        <variable name="v_P8" units="fmol_per_sec"/>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+                <eq/>
+                <ci>e_40</ci>
+                <ci>mu_P8</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>v_P8</ci>
+                <ci>f_40</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <apply>
+                    <diff/>
+                    <bvar>
+                        <ci>t</ci>
+                    </bvar>
+                    <ci>x_P8</ci>
+                </apply>
+                <ci>v_P8</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>mu_P8</ci>
+                <apply>
+                    <times/>
+                    <ci>R</ci>
+                    <ci>T</ci>
+                    <apply>
+                        <ln/>
+                        <apply>
+                            <times/>
+                            <ci>K_8</ci>
+                            <ci>x_P8</ci>
+                        </apply>
+                    </apply>
+                </apply>
+            </apply>
+        </math>
+        <!-- C:P9-->
+        <variable name="mu_P9" units="J_per_mol"/>
+        <variable name="v_P9" units="fmol_per_sec"/>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+                <eq/>
+                <ci>e_49</ci>
+                <ci>mu_P9</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>v_P9</ci>
+                <ci>f_49</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <apply>
+                    <diff/>
+                    <bvar>
+                        <ci>t</ci>
+                    </bvar>
+                    <ci>x_P9</ci>
+                </apply>
+                <ci>v_P9</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>mu_P9</ci>
+                <apply>
+                    <times/>
+                    <ci>R</ci>
+                    <ci>T</ci>
+                    <apply>
+                        <ln/>
+                        <apply>
+                            <times/>
+                            <ci>K_9</ci>
+                            <ci>x_P9</ci>
+                        </apply>
+                    </apply>
+                </apply>
+            </apply>
+        </math>
+        <!-- Re:R6_8-->
+        <variable name="Af_R6_8" units="J_per_mol"/>
+        <variable name="Ar_R6_8" units="J_per_mol"/>
+        <variable name="v_R6_8" units="fmol_per_sec"/>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+                <eq/>
+                <ci>Af_R6_8</ci>
+                <ci>e_41</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>Ar_R6_8</ci>
+                <ci>e_37</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>f_41</ci>
+                <ci>v_R6_8</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>f_37</ci>
+                <ci>v_R6_8</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>v_R6_8</ci>
+                <apply>
+                    <times/>
+                    <ci>kappa_68</ci>
+                    <apply>
+                        <minus/>
+                        <apply>
+                            <exp/>
+                            <apply>
+                                <divide/>
+                                <ci>Af_R6_8</ci>
+                                <apply>
+                                    <times/>
+                                    <ci>R</ci>
+                                    <ci>T</ci>
+                                </apply>
+                            </apply>
+                        </apply>
+                        <apply>
+                            <exp/>
+                            <apply>
+                                <divide/>
+                                <ci>Ar_R6_8</ci>
+                                <apply>
+                                    <times/>
+                                    <ci>R</ci>
+                                    <ci>T</ci>
+                                </apply>
+                            </apply>
+                        </apply>
+                    </apply>
+                </apply>
+            </apply>
+        </math>
+        <!-- Re:R8_9-->
+        <variable name="Af_R8_9" units="J_per_mol"/>
+        <variable name="Ar_R8_9" units="J_per_mol"/>
+        <variable name="v_R8_9" units="fmol_per_sec"/>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+                <eq/>
+                <ci>Af_R8_9</ci>
+                <ci>e_45</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>Ar_R8_9</ci>
+                <ci>e_47</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>f_45</ci>
+                <ci>v_R8_9</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>f_47</ci>
+                <ci>v_R8_9</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>v_R8_9</ci>
+                <apply>
+                    <times/>
+                    <ci>kappa_89</ci>
+                    <apply>
+                        <minus/>
+                        <apply>
+                            <exp/>
+                            <apply>
+                                <divide/>
+                                <ci>Af_R8_9</ci>
+                                <apply>
+                                    <times/>
+                                    <ci>R</ci>
+                                    <ci>T</ci>
+                                </apply>
+                            </apply>
+                        </apply>
+                        <apply>
+                            <exp/>
+                            <apply>
+                                <divide/>
+                                <ci>Ar_R8_9</ci>
+                                <apply>
+                                    <times/>
+                                    <ci>R</ci>
+                                    <ci>T</ci>
+                                </apply>
+                            </apply>
+                        </apply>
+                    </apply>
+                </apply>
+            </apply>
+        </math>
+        <!-- Re:R9_10-->
+        <variable name="Af_R9_10" units="J_per_mol"/>
+        <variable name="Ar_R9_10" units="J_per_mol"/>
+        <variable name="v_R9_10" units="fmol_per_sec"/>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+                <eq/>
+                <ci>Af_R9_10</ci>
+                <ci>e_48</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>Ar_R9_10</ci>
+                <ci>e_50</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>f_48</ci>
+                <ci>v_R9_10</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>f_50</ci>
+                <ci>v_R9_10</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>v_R9_10</ci>
+                <apply>
+                    <times/>
+                    <ci>kappa_910</ci>
+                    <apply>
+                        <minus/>
+                        <apply>
+                            <exp/>
+                            <apply>
+                                <divide/>
+                                <ci>Af_R9_10</ci>
+                                <apply>
+                                    <times/>
+                                    <ci>R</ci>
+                                    <ci>T</ci>
+                                </apply>
+                            </apply>
+                        </apply>
+                        <apply>
+                            <exp/>
+                            <apply>
+                                <divide/>
+                                <ci>Ar_R9_10</ci>
+                                <apply>
+                                    <times/>
+                                    <ci>R</ci>
+                                    <ci>T</ci>
+                                </apply>
+                            </apply>
+                        </apply>
+                    </apply>
+                </apply>
+            </apply>
+            <!-- Junction equations
+ 0 junction #1-->
+            <apply>
+                <eq/>
+                <ci>e_2</ci>
+                <ci>e_1</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>e_8</ci>
+                <ci>e_1</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>f_1</ci>
+                <apply>
+                    <plus/>
+                    <apply>
+                        <minus/>
+                        <ci>f_2</ci>
+                    </apply>
+                    <ci>f_8</ci>
+                </apply>
+            </apply>
+            <!-- 0 junction #2-->
+            <apply>
+                <eq/>
+                <ci>e_10</ci>
+                <ci>e_11</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>e_18</ci>
+                <ci>e_11</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>f_11</ci>
+                <apply>
+                    <plus/>
+                    <ci>f_10</ci>
+                    <ci>f_18</ci>
+                </apply>
+            </apply>
+            <!-- 1 junction #1-->
+            <apply>
+                <eq/>
+                <ci>f_2</ci>
+                <ci>f_3</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>f_17</ci>
+                <ci>f_3</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>e_3</ci>
+                <apply>
+                    <plus/>
+                    <ci>e_2</ci>
+                    <ci>e_17</ci>
+                </apply>
+            </apply>
+            <!-- 1 junction #2-->
+            <apply>
+                <eq/>
+                <ci>f_6</ci>
+                <ci>f_5</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>f_15</ci>
+                <ci>f_5</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>e_5</ci>
+                <apply>
+                    <plus/>
+                    <ci>e_6</ci>
+                    <ci>e_15</ci>
+                </apply>
+            </apply>
+            <!-- 1 junction #3-->
+            <apply>
+                <eq/>
+                <ci>f_8</ci>
+                <ci>f_12</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>f_13</ci>
+                <ci>f_12</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>e_12</ci>
+                <apply>
+                    <plus/>
+                    <ci>e_8</ci>
+                    <ci>e_13</ci>
+                </apply>
+            </apply>
+            <!-- 0 junction #3-->
+            <apply>
+                <eq/>
+                <ci>e_9</ci>
+                <ci>e_20</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>e_21</ci>
+                <ci>e_20</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>e_22</ci>
+                <ci>e_20</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>f_20</ci>
+                <apply>
+                    <minus/>
+                    <apply>
+                        <minus/>
+                        <ci>f_9</ci>
+                        <ci>f_21</ci>
+                    </apply>
+                    <ci>f_22</ci>
+                </apply>
+            </apply>
+            <!-- 0 junction #4-->
+            <apply>
+                <eq/>
+                <ci>e_19</ci>
+                <ci>e_10</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>e_24</ci>
+                <ci>e_10</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>f_10</ci>
+                <apply>
+                    <minus/>
+                    <ci>f_19</ci>
+                    <ci>f_24</ci>
+                </apply>
+            </apply>
+            <!-- 0 junction #5-->
+            <apply>
+                <eq/>
+                <ci>e_27</ci>
+                <ci>e_26</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>e_31</ci>
+                <ci>e_26</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>f_26</ci>
+                <apply>
+                    <minus/>
+                    <ci>f_27</ci>
+                    <ci>f_31</ci>
+                </apply>
+            </apply>
+            <!-- 0 junction #6-->
+            <apply>
+                <eq/>
+                <ci>e_36</ci>
+                <ci>e_4</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>f_4</ci>
+                <apply>
+                    <minus/>
+                    <ci>f_36</ci>
+                </apply>
+            </apply>
+            <!-- 0 junction #7-->
+            <apply>
+                <eq/>
+                <ci>e_32</ci>
+                <ci>e_33</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>e_14</ci>
+                <ci>e_33</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>f_33</ci>
+                <apply>
+                    <minus/>
+                    <ci>f_32</ci>
+                    <ci>f_14</ci>
+                </apply>
+            </apply>
+            <!-- 0 junction #8-->
+            <apply>
+                <eq/>
+                <ci>e_34</ci>
+                <ci>e_35</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>f_35</ci>
+                <ci>f_34</ci>
+            </apply>
+            <!-- 1 junction #4-->
+            <apply>
+                <eq/>
+                <ci>f_22</ci>
+                <ci>f_23</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>f_24</ci>
+                <ci>f_23</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>e_23</ci>
+                <apply>
+                    <plus/>
+                    <ci>e_22</ci>
+                    <ci>e_24</ci>
+                </apply>
+            </apply>
+            <!-- 1 junction #5-->
+            <apply>
+                <eq/>
+                <ci>f_21</ci>
+                <ci>f_28</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>f_29</ci>
+                <ci>f_28</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>e_28</ci>
+                <apply>
+                    <plus/>
+                    <ci>e_21</ci>
+                    <ci>e_29</ci>
+                </apply>
+            </apply>
+            <!-- 1 junction #6-->
+            <apply>
+                <eq/>
+                <ci>f_32</ci>
+                <ci>f_30</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>f_34</ci>
+                <ci>f_30</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>e_30</ci>
+                <apply>
+                    <plus/>
+                    <ci>e_32</ci>
+                    <ci>e_34</ci>
+                </apply>
+            </apply>
+            <!-- 0 junction #9-->
+            <apply>
+                <eq/>
+                <ci>e_38</ci>
+                <ci>e_40</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>e_44</ci>
+                <ci>e_40</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>f_40</ci>
+                <apply>
+                    <minus/>
+                    <ci>f_38</ci>
+                    <ci>f_44</ci>
+                </apply>
+            </apply>
+            <!-- 0 junction #10-->
+            <apply>
+                <eq/>
+                <ci>e_41</ci>
+                <ci>e_42</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>e_15</ci>
+                <ci>e_42</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>f_42</ci>
+                <apply>
+                    <plus/>
+                    <apply>
+                        <minus/>
+                        <ci>f_41</ci>
+                    </apply>
+                    <ci>f_15</ci>
+                </apply>
+            </apply>
+            <!-- 0 junction #11-->
+            <apply>
+                <eq/>
+                <ci>e_47</ci>
+                <ci>e_49</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>e_48</ci>
+                <ci>e_49</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>f_49</ci>
+                <apply>
+                    <minus/>
+                    <ci>f_47</ci>
+                    <ci>f_48</ci>
+                </apply>
+            </apply>
+            <!-- 0 junction #12-->
+            <apply>
+                <eq/>
+                <ci>e_43</ci>
+                <ci>e_18</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>e_51</ci>
+                <ci>e_18</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>f_18</ci>
+                <apply>
+                    <plus/>
+                    <apply>
+                        <minus/>
+                        <ci>f_43</ci>
+                    </apply>
+                    <ci>f_51</ci>
+                </apply>
+            </apply>
+            <!-- 0 junction #13-->
+            <apply>
+                <eq/>
+                <ci>e_52</ci>
+                <ci>e_53</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>e_16</ci>
+                <ci>e_53</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>f_53</ci>
+                <apply>
+                    <minus/>
+                    <ci>f_52</ci>
+                    <ci>f_16</ci>
+                </apply>
+            </apply>
+            <!-- 1 junction #7-->
+            <apply>
+                <eq/>
+                <ci>f_38</ci>
+                <ci>f_37</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>f_39</ci>
+                <ci>f_37</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>e_37</ci>
+                <apply>
+                    <plus/>
+                    <ci>e_38</ci>
+                    <ci>e_39</ci>
+                </apply>
+            </apply>
+            <!-- 1 junction #8-->
+            <apply>
+                <eq/>
+                <ci>f_44</ci>
+                <ci>f_45</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>f_46</ci>
+                <ci>f_45</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>e_45</ci>
+                <apply>
+                    <plus/>
+                    <ci>e_44</ci>
+                    <ci>e_46</ci>
+                </apply>
+            </apply>
+            <!-- 1 junction #9-->
+            <apply>
+                <eq/>
+                <ci>f_51</ci>
+                <ci>f_50</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>f_52</ci>
+                <ci>f_50</ci>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>e_50</ci>
+                <apply>
+                    <plus/>
+                    <ci>e_51</ci>
+                    <ci>e_52</ci>
+                </apply>
+            </apply>
+            <!-- Power conversion
+ TF:Cai-->
+            <apply>
+                <eq/>
+                <ci>e_29</ci>
+                <apply>
+                    <times/>
+                    <ci>n_Cai</ci>
+                    <ci>e_36</ci>
+                </apply>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>f_36</ci>
+                <apply>
+                    <times/>
+                    <ci>n_Cai</ci>
+                    <ci>f_29</ci>
+                </apply>
+            </apply>
+            <!-- TF:n-->
+            <apply>
+                <eq/>
+                <ci>e_35</ci>
+                <apply>
+                    <times/>
+                    <ci>n_H</ci>
+                    <ci>e_19</ci>
+                </apply>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>f_19</ci>
+                <apply>
+                    <times/>
+                    <ci>n_H</ci>
+                    <ci>f_35</ci>
+                </apply>
+            </apply>
+            <!-- TF:Casr-->
+            <apply>
+                <eq/>
+                <ci>e_39</ci>
+                <apply>
+                    <times/>
+                    <ci>n_Casr</ci>
+                    <ci>e_7</ci>
+                </apply>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>f_7</ci>
+                <apply>
+                    <times/>
+                    <ci>n_Casr</ci>
+                    <ci>f_39</ci>
+                </apply>
+            </apply>
+            <!-- TF:n-->
+            <apply>
+                <eq/>
+                <ci>e_46</ci>
+                <apply>
+                    <times/>
+                    <ci>n_H</ci>
+                    <ci>e_43</ci>
+                </apply>
+            </apply>
+            <apply>
+                <eq/>
+                <ci>f_43</ci>
+                <apply>
+                    <times/>
+                    <ci>n_H</ci>
+                    <ci>f_46</ci>
+                </apply>
+            </apply>
+        </math>
+    </component>
+</model>
