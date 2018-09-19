@@ -72,19 +72,19 @@ I = eye(num_cols);
 
 M = [I N_fT; I N_rT];
 
-K_cT = zeros(2,size(M,2));
+N_cT = zeros(2,size(M,2));
 
 % Add constraint for MgATP hydrolysis
-K_cT(1,22) = 1;
-K_cT(1,23) = -1;
-K_cT(1,24) = -1;
-K_cT(1,19) = -1;
+N_cT(1,22) = 1;
+N_cT(1,23) = -1;
+N_cT(1,24) = -1;
+N_cT(1,19) = -1;
 
 % Add constraint for calcium transport
-K_cT(2,20) = 1;
-K_cT(2,21) = -1;
+N_cT(2,20) = 1;
+N_cT(2,21) = -1;
 
-M = [M; K_cT];
+M = [M; N_cT];
 
 %% Set the kinetic rate constants
 
