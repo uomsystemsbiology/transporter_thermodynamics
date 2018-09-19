@@ -1,0 +1,593 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600) (preloaded format=pdflatex 2018.1.30)  18 SEP 2018 17:13
+entering extended mode
+**./transporter_figures.tex
+(transporter_figures.tex
+LaTeX2e <2017-04-15>
+Babel <3.17> and hyphenation patterns for 72 language(s) loaded.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\article.cls"
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\size11.clo"
+File: size11.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(C:\Users\panm\AppData\Roaming\MiKTeX\2.9\tex\latex\graphics-cfg\graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 99.
+
+(C:\Users\panm\AppData\Roaming\MiKTeX\2.9\tex\latex\graphics-def\pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.sty"
+Package: geometry 2010/09/12 v5.6 Page Geometry
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
+Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifvtex.sty"
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count87
+\Gm@cntv=\count88
+\c@Gm@tempcnt=\count89
+\Gm@bindingoffset=\dimen105
+\Gm@wd@mp=\dimen106
+\Gm@odd@mp=\dimen107
+\Gm@even@mp=\dimen108
+\Gm@layoutwidth=\dimen109
+\Gm@layoutheight=\dimen110
+\Gm@layouthoffset=\dimen111
+\Gm@layoutvoffset=\dimen112
+\Gm@dimlist=\toks15
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.cfg"))
+(C:\Users\panm\AppData\Roaming\MiKTeX\2.9\tex\latex\caption\caption.sty
+Package: caption 2013/05/02 v3.3-89 Customizing captions (AR)
+
+(C:\Users\panm\AppData\Roaming\MiKTeX\2.9\tex\latex\caption\caption3.sty
+Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 57.
+\captionmargin=\dimen113
+\captionmargin@=\dimen114
+\captionwidth=\dimen115
+\caption@tempdima=\dimen116
+\caption@indent=\dimen117
+\caption@parindent=\dimen118
+\caption@hangindent=\dimen119
+)
+\c@ContinuedFloat=\count90
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\epstopdf.sty"
+Package: epstopdf 2016/05/15 v2.6 Conversion with epstopdf on the fly (HO)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\grfext.sty"
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\kvdefinekeys.sty"
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\kvsetkeys.sty"
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\etexcmds.sty"
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifluatex.sty"
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\pdftexcmds.sty"
+Package: pdftexcmds 2017/03/19 v0.25 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+))
+(transporter_figures.aux)
+\openout1 = `transporter_figures.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+
+(C:\Users\panm\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count91
+\scratchdimen=\dimen120
+\scratchbox=\box26
+\nofMPsegments=\count92
+\nofMParguments=\count93
+\everyMPshowfont=\toks16
+\MPscratchCnt=\count94
+\MPscratchDim=\dimen121
+\MPnumerator=\count95
+\makeMPintoPDFobject=\count96
+\everyMPtoPDFconversion=\toks17
+)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(89.62709pt, 418.25368pt, 89.6271pt)
+* v-part:(T,H,B)=(56.9055pt, 686.7347pt, 101.40665pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=418.25368pt
+* \textheight=686.7347pt
+* \oddsidemargin=17.3571pt
+* \evensidemargin=17.3571pt
+* \topmargin=-52.36449pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=11.0pt
+* \footskip=30.0pt
+* \marginparwidth=59.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 21.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 21.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 21.
+Package epstopdf Info: Source file: <enzyme_cycle_x.eps>
+(epstopdf)                    date: 2018-06-07 16:47:54
+(epstopdf)                    size: 18189 bytes
+(epstopdf)             Output file: <enzyme_cycle_x-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-07-19 11:36:25
+(epstopdf)                    size: 6919 bytes
+(epstopdf)             Command: <epstopdf --outfile=enzyme_cycle_x-eps-converte
+d-to.pdf enzyme_cycle_x.eps>
+(epstopdf)             \includegraphics on input line 26.
+Package epstopdf Info: Output file is already uptodate.
+<enzyme_cycle_x-eps-converted-to.pdf, id=1, 389.455pt x 300.12125pt>
+File: enzyme_cycle_x-eps-converted-to.pdf Graphic file (type pdf)
+<use enzyme_cycle_x-eps-converted-to.pdf>
+Package pdftex.def Info: enzyme_cycle_x-eps-converted-to.pdf  used on input lin
+e 26.
+(pdftex.def)             Requested size: 250.95476pt x 193.38667pt.
+Package epstopdf Info: Source file: <enzyme_cycle_v.eps>
+(epstopdf)                    date: 2018-06-07 16:48:00
+(epstopdf)                    size: 17000 bytes
+(epstopdf)             Output file: <enzyme_cycle_v-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-07-19 11:36:30
+(epstopdf)                    size: 6613 bytes
+(epstopdf)             Command: <epstopdf --outfile=enzyme_cycle_v-eps-converte
+d-to.pdf enzyme_cycle_v.eps>
+(epstopdf)             \includegraphics on input line 28.
+Package epstopdf Info: Output file is already uptodate.
+<enzyme_cycle_v-eps-converted-to.pdf, id=2, 389.455pt x 299.1175pt>
+File: enzyme_cycle_v-eps-converted-to.pdf Graphic file (type pdf)
+<use enzyme_cycle_v-eps-converted-to.pdf>
+Package pdftex.def Info: enzyme_cycle_v-eps-converted-to.pdf  used on input lin
+e 28.
+(pdftex.def)             Requested size: 250.95476pt x 192.73988pt.
+Package epstopdf Info: Source file: <enzyme_cycle_ss.eps>
+(epstopdf)                    date: 2018-06-07 16:48:06
+(epstopdf)                    size: 18860 bytes
+(epstopdf)             Output file: <enzyme_cycle_ss-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-07-19 11:36:34
+(epstopdf)                    size: 6862 bytes
+(epstopdf)             Command: <epstopdf --outfile=enzyme_cycle_ss-eps-convert
+ed-to.pdf enzyme_cycle_ss.eps>
+(epstopdf)             \includegraphics on input line 30.
+Package epstopdf Info: Output file is already uptodate.
+<enzyme_cycle_ss-eps-converted-to.pdf, id=3, 386.44376pt x 296.10625pt>
+File: enzyme_cycle_ss-eps-converted-to.pdf Graphic file (type pdf)
+<use enzyme_cycle_ss-eps-converted-to.pdf>
+Package pdftex.def Info: enzyme_cycle_ss-eps-converted-to.pdf  used on input li
+ne 30.
+(pdftex.def)             Requested size: 250.95476pt x 192.29056pt.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.95> on input line 31.
+
+LaTeX Warning: Float too large for page by 16.3074pt on input line 32.
+
+Package epstopdf Info: Source file: <coupled_reactions_Se.eps>
+(epstopdf)                    date: 2018-06-07 16:50:36
+(epstopdf)                    size: 31907 bytes
+(epstopdf)             Output file: <coupled_reactions_Se-eps-converted-to.pdf>
+
+(epstopdf)                    date: 2018-07-19 11:48:49
+(epstopdf)                    size: 10696 bytes
+(epstopdf)             Command: <epstopdf --outfile=coupled_reactions_Se-eps-co
+nverted-to.pdf coupled_reactions_Se.eps>
+(epstopdf)             \includegraphics on input line 37.
+Package epstopdf Info: Output file is already uptodate.
+<coupled_reactions_Se-eps-converted-to.pdf, id=4, 386.44376pt x 296.10625pt>
+File: coupled_reactions_Se-eps-converted-to.pdf Graphic file (type pdf)
+<use coupled_reactions_Se-eps-converted-to.pdf>
+Package pdftex.def Info: coupled_reactions_Se-eps-converted-to.pdf  used on inp
+ut line 37.
+(pdftex.def)             Requested size: 209.12683pt x 160.23837pt.
+Package epstopdf Info: Source file: <coupled_reactions_A.eps>
+(epstopdf)                    date: 2018-06-07 16:50:42
+(epstopdf)                    size: 15821 bytes
+(epstopdf)             Output file: <coupled_reactions_A-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-07-19 11:48:53
+(epstopdf)                    size: 5850 bytes
+(epstopdf)             Command: <epstopdf --outfile=coupled_reactions_A-eps-con
+verted-to.pdf coupled_reactions_A.eps>
+(epstopdf)             \includegraphics on input line 39.
+Package epstopdf Info: Output file is already uptodate.
+<coupled_reactions_A-eps-converted-to.pdf, id=5, 386.44376pt x 290.08376pt>
+File: coupled_reactions_A-eps-converted-to.pdf Graphic file (type pdf)
+<use coupled_reactions_A-eps-converted-to.pdf>
+Package pdftex.def Info: coupled_reactions_A-eps-converted-to.pdf  used on inpu
+t line 39.
+(pdftex.def)             Requested size: 209.12683pt x 156.97928pt.
+Package epstopdf Info: Source file: <coupled_reactions_DG.eps>
+(epstopdf)                    date: 2018-06-07 16:50:48
+(epstopdf)                    size: 23297 bytes
+(epstopdf)             Output file: <coupled_reactions_DG-eps-converted-to.pdf>
+
+(epstopdf)                    date: 2018-07-19 11:48:56
+(epstopdf)                    size: 9285 bytes
+(epstopdf)             Command: <epstopdf --outfile=coupled_reactions_DG-eps-co
+nverted-to.pdf coupled_reactions_DG.eps>
+(epstopdf)             \includegraphics on input line 41.
+Package epstopdf Info: Output file is already uptodate.
+<coupled_reactions_DG-eps-converted-to.pdf, id=6, 372.39125pt x 296.10625pt>
+File: coupled_reactions_DG-eps-converted-to.pdf Graphic file (type pdf)
+<use coupled_reactions_DG-eps-converted-to.pdf>
+Package pdftex.def Info: coupled_reactions_DG-eps-converted-to.pdf  used on inp
+ut line 41.
+(pdftex.def)             Requested size: 209.12683pt x 166.29277pt.
+Package epstopdf Info: Source file: <charged_species_V.eps>
+(epstopdf)                    date: 2018-06-07 16:44:58
+(epstopdf)                    size: 18667 bytes
+(epstopdf)             Output file: <charged_species_V-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-07-20 14:52:36
+(epstopdf)                    size: 6484 bytes
+(epstopdf)             Command: <epstopdf --outfile=charged_species_V-eps-conve
+rted-to.pdf charged_species_V.eps>
+(epstopdf)             \includegraphics on input line 48.
+Package epstopdf Info: Output file is already uptodate.
+<charged_species_V-eps-converted-to.pdf, id=7, 381.425pt x 296.10625pt>
+File: charged_species_V-eps-converted-to.pdf Graphic file (type pdf)
+<use charged_species_V-eps-converted-to.pdf>
+Package pdftex.def Info: charged_species_V-eps-converted-to.pdf  used on input 
+line 48.
+(pdftex.def)             Requested size: 209.12683pt x 162.34837pt.
+Package epstopdf Info: Source file: <charged_species_DG.eps>
+(epstopdf)                    date: 2018-06-07 16:45:04
+(epstopdf)                    size: 19261 bytes
+(epstopdf)             Output file: <charged_species_DG-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-07-20 14:52:38
+(epstopdf)                    size: 6744 bytes
+(epstopdf)             Command: <epstopdf --outfile=charged_species_DG-eps-conv
+erted-to.pdf charged_species_DG.eps>
+(epstopdf)             \includegraphics on input line 50.
+Package epstopdf Info: Output file is already uptodate.
+<charged_species_DG-eps-converted-to.pdf, id=8, 386.44376pt x 296.10625pt>
+File: charged_species_DG-eps-converted-to.pdf Graphic file (type pdf)
+<use charged_species_DG-eps-converted-to.pdf>
+Package pdftex.def Info: charged_species_DG-eps-converted-to.pdf  used on input
+ line 50.
+(pdftex.def)             Requested size: 209.12683pt x 160.23837pt.
+Package epstopdf Info: Source file: <charged_species_DG_vss.eps>
+(epstopdf)                    date: 2018-06-07 16:45:10
+(epstopdf)                    size: 20378 bytes
+(epstopdf)             Output file: <charged_species_DG_vss-eps-converted-to.pd
+f>
+(epstopdf)                    date: 2018-07-20 14:54:58
+(epstopdf)                    size: 7557 bytes
+(epstopdf)             Command: <epstopdf --outfile=charged_species_DG_vss-eps-
+converted-to.pdf charged_species_DG_vss.eps>
+(epstopdf)             \includegraphics on input line 52.
+Package epstopdf Info: Output file is already uptodate.
+<charged_species_DG_vss-eps-converted-to.pdf, id=9, 375.4025pt x 296.10625pt>
+File: charged_species_DG_vss-eps-converted-to.pdf Graphic file (type pdf)
+<use charged_species_DG_vss-eps-converted-to.pdf>
+Package pdftex.def Info: charged_species_DG_vss-eps-converted-to.pdf  used on i
+nput line 52.
+(pdftex.def)             Requested size: 209.12683pt x 164.95538pt.
+
+LaTeX Warning: Float too large for page by 7.03246pt on input line 54.
+
+Package epstopdf Info: Source file: <SERCA_v_ss.eps>
+(epstopdf)                    date: 2018-06-05 15:50:44
+(epstopdf)                    size: 18988 bytes
+(epstopdf)             Output file: <SERCA_v_ss-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-07-19 12:09:01
+(epstopdf)                    size: 8136 bytes
+(epstopdf)             Command: <epstopdf --outfile=SERCA_v_ss-eps-converted-to
+.pdf SERCA_v_ss.eps>
+(epstopdf)             \includegraphics on input line 60.
+Package epstopdf Info: Output file is already uptodate.
+<SERCA_v_ss-eps-converted-to.pdf, id=10, 374.39874pt x 296.10625pt>
+File: SERCA_v_ss-eps-converted-to.pdf Graphic file (type pdf)
+<use SERCA_v_ss-eps-converted-to.pdf>
+Package pdftex.def Info: SERCA_v_ss-eps-converted-to.pdf  used on input line 60
+.
+(pdftex.def)             Requested size: 188.21288pt x 148.857pt.
+Package epstopdf Info: Source file: <SERCA_DG.eps>
+(epstopdf)                    date: 2018-06-05 15:50:50
+(epstopdf)                    size: 17399 bytes
+(epstopdf)             Output file: <SERCA_DG-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-07-19 12:09:05
+(epstopdf)                    size: 6927 bytes
+(epstopdf)             Command: <epstopdf --outfile=SERCA_DG-eps-converted-to.p
+df SERCA_DG.eps>
+(epstopdf)             \includegraphics on input line 61.
+Package epstopdf Info: Output file is already uptodate.
+<SERCA_DG-eps-converted-to.pdf, id=11, 380.42125pt x 296.10625pt>
+File: SERCA_DG-eps-converted-to.pdf Graphic file (type pdf)
+<use SERCA_DG-eps-converted-to.pdf>
+Package pdftex.def Info: SERCA_DG-eps-converted-to.pdf  used on input line 61.
+(pdftex.def)             Requested size: 188.21288pt x 146.503pt.
+Package epstopdf Info: Source file: <SERCA_power.eps>
+(epstopdf)                    date: 2018-06-05 15:50:54
+(epstopdf)                    size: 16629 bytes
+(epstopdf)             Output file: <SERCA_power-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-07-19 12:09:08
+(epstopdf)                    size: 6841 bytes
+(epstopdf)             Command: <epstopdf --outfile=SERCA_power-eps-converted-t
+o.pdf SERCA_power.eps>
+(epstopdf)             \includegraphics on input line 63.
+Package epstopdf Info: Output file is already uptodate.
+<SERCA_power-eps-converted-to.pdf, id=12, 380.42125pt x 296.10625pt>
+File: SERCA_power-eps-converted-to.pdf Graphic file (type pdf)
+<use SERCA_power-eps-converted-to.pdf>
+Package pdftex.def Info: SERCA_power-eps-converted-to.pdf  used on input line 6
+3.
+(pdftex.def)             Requested size: 188.21288pt x 146.503pt.
+Package epstopdf Info: Source file: <SERCA_efficiency.eps>
+(epstopdf)                    date: 2018-06-05 15:50:59
+(epstopdf)                    size: 16961 bytes
+(epstopdf)             Output file: <SERCA_efficiency-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-07-19 12:09:10
+(epstopdf)                    size: 7334 bytes
+(epstopdf)             Command: <epstopdf --outfile=SERCA_efficiency-eps-conver
+ted-to.pdf SERCA_efficiency.eps>
+(epstopdf)             \includegraphics on input line 64.
+Package epstopdf Info: Output file is already uptodate.
+<SERCA_efficiency-eps-converted-to.pdf, id=13, 380.42125pt x 296.10625pt>
+File: SERCA_efficiency-eps-converted-to.pdf Graphic file (type pdf)
+<use SERCA_efficiency-eps-converted-to.pdf>
+Package pdftex.def Info: SERCA_efficiency-eps-converted-to.pdf  used on input l
+ine 64.
+(pdftex.def)             Requested size: 188.21288pt x 146.503pt.
+Package epstopdf Info: Source file: <Terkildsen_kinetic_fit_KA_comparison.eps>
+(epstopdf)                    date: 2018-06-05 15:51:13
+(epstopdf)                    size: 44121 bytes
+(epstopdf)             Output file: <Terkildsen_kinetic_fit_KA_comparison-eps-c
+onverted-to.pdf>
+(epstopdf)                    date: 2018-07-20 14:35:52
+(epstopdf)                    size: 14190 bytes
+(epstopdf)             Command: <epstopdf --outfile=Terkildsen_kinetic_fit_KA_c
+omparison-eps-converted-to.pdf Terkildsen_kinetic_fit_KA_comparison.eps>
+(epstopdf)             \includegraphics on input line 72.
+Package epstopdf Info: Output file is already uptodate.
+<Terkildsen_kinetic_fit_KA_comparison-eps-converted-to.pdf, id=14, 390.45876pt 
+x 299.1175pt>
+File: Terkildsen_kinetic_fit_KA_comparison-eps-converted-to.pdf Graphic file (t
+ype pdf)
+<use Terkildsen_kinetic_fit_KA_comparison-eps-converted-to.pdf>
+Package pdftex.def Info: Terkildsen_kinetic_fit_KA_comparison-eps-converted-to.
+pdf  used on input line 72.
+(pdftex.def)             Requested size: 250.95476pt x 192.24696pt.
+Package epstopdf Info: Source file: <Terkildsen_fit_NG_I.eps>
+(epstopdf)                    date: 2018-06-05 15:51:32
+(epstopdf)                    size: 41054 bytes
+(epstopdf)             Output file: <Terkildsen_fit_NG_I-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-07-20 14:24:20
+(epstopdf)                    size: 14349 bytes
+(epstopdf)             Command: <epstopdf --outfile=Terkildsen_fit_NG_I-eps-con
+verted-to.pdf Terkildsen_fit_NG_I.eps>
+(epstopdf)             \includegraphics on input line 74.
+Package epstopdf Info: Output file is already uptodate.
+<Terkildsen_fit_NG_I-eps-converted-to.pdf, id=15, 389.455pt x 299.1175pt>
+File: Terkildsen_fit_NG_I-eps-converted-to.pdf Graphic file (type pdf)
+<use Terkildsen_fit_NG_I-eps-converted-to.pdf>
+Package pdftex.def Info: Terkildsen_fit_NG_I-eps-converted-to.pdf  used on inpu
+t line 74.
+(pdftex.def)             Requested size: 250.95476pt x 192.73988pt.
+Package epstopdf Info: Source file: <Terkildsen_fit_Hansen_Nai_comparison.eps>
+(epstopdf)                    date: 2018-06-05 15:51:47
+(epstopdf)                    size: 17900 bytes
+(epstopdf)             Output file: <Terkildsen_fit_Hansen_Nai_comparison-eps-c
+onverted-to.pdf>
+(epstopdf)                    date: 2018-07-20 14:38:30
+(epstopdf)                    size: 7363 bytes
+(epstopdf)             Command: <epstopdf --outfile=Terkildsen_fit_Hansen_Nai_c
+omparison-eps-converted-to.pdf Terkildsen_fit_Hansen_Nai_comparison.eps>
+(epstopdf)             \includegraphics on input line 81.
+Package epstopdf Info: Output file is already uptodate.
+<Terkildsen_fit_Hansen_Nai_comparison-eps-converted-to.pdf, id=16, 385.44pt x 2
+96.10625pt>
+File: Terkildsen_fit_Hansen_Nai_comparison-eps-converted-to.pdf Graphic file (t
+ype pdf)
+<use Terkildsen_fit_Hansen_Nai_comparison-eps-converted-to.pdf>
+Package pdftex.def Info: Terkildsen_fit_Hansen_Nai_comparison-eps-converted-to.
+pdf  used on input line 81.
+(pdftex.def)             Requested size: 209.12683pt x 160.65404pt.
+Package epstopdf Info: Source file: <Terkildsen_fit_NG_Ke_comparison.eps>
+(epstopdf)                    date: 2018-06-05 15:51:38
+(epstopdf)                    size: 18399 bytes
+(epstopdf)             Output file: <Terkildsen_fit_NG_Ke_comparison-eps-conver
+ted-to.pdf>
+(epstopdf)                    date: 2018-07-20 14:38:32
+(epstopdf)                    size: 7588 bytes
+(epstopdf)             Command: <epstopdf --outfile=Terkildsen_fit_NG_Ke_compar
+ison-eps-converted-to.pdf Terkildsen_fit_NG_Ke_comparison.eps>
+(epstopdf)             \includegraphics on input line 83.
+Package epstopdf Info: Output file is already uptodate.
+<Terkildsen_fit_NG_Ke_comparison-eps-converted-to.pdf, id=17, 385.44pt x 291.08
+75pt>
+File: Terkildsen_fit_NG_Ke_comparison-eps-converted-to.pdf Graphic file (type p
+df)
+<use Terkildsen_fit_NG_Ke_comparison-eps-converted-to.pdf>
+Package pdftex.def Info: Terkildsen_fit_NG_Ke_comparison-eps-converted-to.pdf  
+used on input line 83.
+(pdftex.def)             Requested size: 209.12683pt x 157.93109pt.
+Package epstopdf Info: Source file: <Terkildsen_fit_Friedrich_MgATP_comparison.
+eps>
+(epstopdf)                    date: 2018-06-05 15:51:53
+(epstopdf)                    size: 26176 bytes
+(epstopdf)             Output file: <Terkildsen_fit_Friedrich_MgATP_comparison-
+eps-converted-to.pdf>
+(epstopdf)                    date: 2018-07-20 14:38:34
+(epstopdf)                    size: 11390 bytes
+(epstopdf)             Command: <epstopdf --outfile=Terkildsen_fit_Friedrich_Mg
+ATP_comparison-eps-converted-to.pdf Terkildsen_fit_Friedrich_MgATP_comparison.e
+ps>
+(epstopdf)             \includegraphics on input line 85.
+Package epstopdf Info: Output file is already uptodate.
+<Terkildsen_fit_Friedrich_MgATP_comparison-eps-converted-to.pdf, id=18, 387.447
+5pt x 294.09875pt>
+File: Terkildsen_fit_Friedrich_MgATP_comparison-eps-converted-to.pdf Graphic fi
+le (type pdf)
+<use Terkildsen_fit_Friedrich_MgATP_comparison-eps-converted-to.pdf>
+Package pdftex.def Info: Terkildsen_fit_Friedrich_MgATP_comparison-eps-converte
+d-to.pdf  used on input line 85.
+(pdftex.def)             Requested size: 209.12683pt x 158.74364pt.
+Package epstopdf Info: Source file: <NaK_eq.eps>
+(epstopdf)                    date: 2018-06-05 15:58:23
+(epstopdf)                    size: 17178 bytes
+(epstopdf)             Output file: <NaK_eq-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-07-20 14:42:45
+(epstopdf)                    size: 7138 bytes
+(epstopdf)             Command: <epstopdf --outfile=NaK_eq-eps-converted-to.pdf
+ NaK_eq.eps>
+(epstopdf)             \includegraphics on input line 92.
+Package epstopdf Info: Output file is already uptodate.
+<NaK_eq-eps-converted-to.pdf, id=19, 396.48125pt x 296.10625pt>
+File: NaK_eq-eps-converted-to.pdf Graphic file (type pdf)
+<use NaK_eq-eps-converted-to.pdf>
+Package pdftex.def Info: NaK_eq-eps-converted-to.pdf  used on input line 92.
+(pdftex.def)             Requested size: 292.77629pt x 218.65884pt.
+Package epstopdf Info: Source file: <NaK_DG.eps>
+(epstopdf)                    date: 2018-06-05 15:58:30
+(epstopdf)                    size: 17242 bytes
+(epstopdf)             Output file: <NaK_DG-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-07-20 14:42:48
+(epstopdf)                    size: 7270 bytes
+(epstopdf)             Command: <epstopdf --outfile=NaK_DG-eps-converted-to.pdf
+ NaK_DG.eps>
+(epstopdf)             \includegraphics on input line 94.
+Package epstopdf Info: Output file is already uptodate.
+<NaK_DG-eps-converted-to.pdf, id=20, 387.4475pt x 300.12125pt>
+File: NaK_DG-eps-converted-to.pdf Graphic file (type pdf)
+<use NaK_DG-eps-converted-to.pdf>
+Package pdftex.def Info: NaK_DG-eps-converted-to.pdf  used on input line 94.
+(pdftex.def)             Requested size: 292.77629pt x 226.78937pt.
+[1
+
+{C:/Users/panm/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2 <./enzyme
+_cycle_x-eps-converted-to.pdf> <./enzyme_cycle_v-eps-converted-to.pdf> <./enzym
+e_cycle_ss-eps-converted-to.pdf>] [3 <./coupled_reactions_Se-eps-converted-to.p
+df> <./coupled_reactions_A-eps-converted-to.pdf> <./coupled_reactions_DG-eps-co
+nverted-to.pdf>] [4 <./charged_species_V-eps-converted-to.pdf> <./charged_speci
+es_DG-eps-converted-to.pdf> <./charged_species_DG_vss-eps-converted-to.pdf>]
+[5 <./SERCA_v_ss-eps-converted-to.pdf> <./SERCA_DG-eps-converted-to.pdf> <./SER
+CA_power-eps-converted-to.pdf> <./SERCA_efficiency-eps-converted-to.pdf>]
+[6 <./Terkildsen_kinetic_fit_KA_comparison-eps-converted-to.pdf> <./Terkildsen_
+fit_NG_I-eps-converted-to.pdf>] [7 <./Terkildsen_fit_Hansen_Nai_comparison-eps-
+converted-to.pdf> <./Terkildsen_fit_NG_Ke_comparison-eps-converted-to.pdf> <./T
+erkildsen_fit_Friedrich_MgATP_comparison-eps-converted-to.pdf>] [8 <./NaK_eq-ep
+s-converted-to.pdf> <./NaK_DG-eps-converted-to.pdf>] (transporter_figures.aux) 
+) 
+Here is how much of TeX's memory you used:
+ 3072 strings out of 493337
+ 51970 string characters out of 3136966
+ 124094 words of memory out of 3000000
+ 6583 multiletter control sequences out of 15000+200000
+ 8206 words of font info for 29 fonts, out of 3000000 for 9000
+ 1127 hyphenation exceptions out of 8191
+ 42i,15n,38p,1100b,325s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><
+C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:
+/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/P
+rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Prog
+ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program
+ Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Fi
+les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files 
+(x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on transporter_figures.pdf (8 pages, 243941 bytes).
+PDF statistics:
+ 181 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 101 words of extra memory for PDF output out of 10000 (max. 10000000)
+

@@ -1,0 +1,100 @@
+\documentclass[11pt]{article}
+
+\usepackage{graphicx}
+\usepackage[a4paper,top=2cm]{geometry}
+\usepackage[labelfont=bf]{caption}
+\usepackage{epstopdf}
+
+
+\begin{document}
+\title{\textbf{A thermodynamic framework for modelling membrane transporters using bond graphs}}
+
+\author{Michael Pan$^1$, Peter J. Gawthrop$^1$, Kenneth Tran$^2$, Joseph Cursons$^{3,4}$, \\ Edmund J. Crampin$^{1,5,6,*}$}
+
+\date{$^1$Systems Biology Laboratory, School of Mathematics and Statistics, and Department of Biomedical Engineering, Melbourne School of Engineering, University of Melbourne, Parkville, Victoria 3010, Australia \\[0.3cm]
+	$^2$Auckland Bioengineering Institute, University of Auckland \\[0.3cm]
+	$^3$Bioinformatics Division, Walter and Eliza Hall Institute of Medical Research, Parkville, Victoria 3052, Australia \\[0.3cm]
+	$^4$Department of Medical Biology, School of Medicine, University of Melbourne, Parkville, Victoria 3010, Australia  \\[0.3cm]
+	$^5$School of Medicine, Faculty of Medicine, Dentistry and Health Sciences, University of Melbourne, Parkville, Victoria 3010 \\[0.3cm]
+	$^6$ARC Centre of Excellence in Convergent Bio-Nano Science and Technology, Melbourne School of Engineering, University of Melbourne, Parkville, Victoria 3010, Australia \\[0.3cm]
+	*Corresponding author. Email: edmund.crampin@unimelb.edu.au}
+\maketitle
+
+\begin{figure}
+\centering
+(A)\\
+\includegraphics[width=0.6\linewidth]{enzyme_cycle_x.eps}\\
+(B)\\
+\includegraphics[width=0.6\linewidth]{enzyme_cycle_v.eps}\\
+(C)\\
+\includegraphics[width=0.6\linewidth]{enzyme_cycle_ss.eps}
+\caption{\textbf{Enzyme cycle model.} A passive transporter can be modelled using the enzyme cycle $\mathrm{E_1 + S_i \rightleftharpoons E_2 \rightleftharpoons E_2 + S_e}$.	We simulate this model, and plot how the enzyme states \textbf{(A)} and reaction velocities \textbf{(B)} change with respect to time. \textbf{(C)} The transporter reaches a steady state, with the direction of steady-state transport dictated by the concentration gradient of the substrate.}
+\end{figure}
+
+\begin{figure}
+	\centering
+	(A)\\
+	\includegraphics[width=0.5\linewidth]{coupled_reactions_Se.eps}\\
+	(B)\\
+	\includegraphics[width=0.5\linewidth]{coupled_reactions_A.eps}\\
+	(C)\\
+	\includegraphics[width=0.5\linewidth]{coupled_reactions_DG.eps}
+	\caption{\textbf{Coupled transport.} In order for a transporter to move a substrate against a concentration gradient, it must couple the transport to a process that generates sufficient energy for the transport to occur. Here we model a transporter that couples the transport of substrate to another biochemical reaction $\mathrm{A \rightleftharpoons B}$, giving rise to the overall reaction $	\mathrm{S_i} + A \rightleftharpoons \mathrm{S_e} + B$. We simulate this system to steady state. The plots show that the amount of A affects the ability of the transporter to move a substrate against a chemical gradient, shifting the equilibrium point to a higher concentration of Se \textbf{(A)} and increasing the cycling rate \textbf{(B)}. \textbf{(C)} By modelling this system as a bond graph, fundamental thermodynamic constraints are captured, therefore the pump only operates in the direction of decreasing chemical potential, and stops cycling at equilibrium.}
+\end{figure}
+
+\begin{figure}
+	\centering
+	(A)\\
+	\includegraphics[width=0.5\linewidth]{charged_species_V.eps}\\
+	(B)\\
+	\includegraphics[width=0.5\linewidth]{charged_species_DG.eps} \\
+	(C)\\
+	\includegraphics[width=0.5\linewidth]{charged_species_DG_vss.eps}
+	\caption{\textbf{Electrogenic transport.} Many transporters, including ion transporters, move charged species across a membrane that is charged. For these transporters, the membrane potential contributes to the thermodynamics and kinetics of the system. Because bond graphs are domain-independent, they are able to model the interaction between chemical and electrochemical power in electrogenic systems. Here we simulate the transporter model $\mathrm{E_1 + S_i^+ \rightleftharpoons E_2 \rightleftharpoons E_2 + S_e^+}$, where the substrate is charged. \textbf{(A)} A plot of the cycling rate against voltage shows the bond graph model captures the equilibrium point (Nernst potential) of this transporter. \textbf{(B)} The membrane voltage has a linear contribution to the Gibbs free energy of the transporter. \textbf{(C)} Plotting cycling rate against Gibbs free energy verifies that the equilibrium point corresponds to a Gibbs free energy of zero.}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\begin{tabular}{c c}
+		(A) & (B) \\
+		\includegraphics[width=0.45\linewidth]{SERCA_v_ss.eps} & 
+		\includegraphics[width=0.45\linewidth]{SERCA_DG.eps} \\
+		(C) & (D) \\
+		\includegraphics[width=0.45\linewidth]{SERCA_power.eps} & 
+		\includegraphics[width=0.45\linewidth]{SERCA_efficiency.eps}
+	\end{tabular}
+	\caption{\textbf{Simulation of the SERCA pump.} \textbf{(A)} Comparison of cycling rates for kinetic and bond graph models, reproducing part of Fig. 13 in Tran et al. (2009); \textbf{(B)} Gibbs free energy; \textbf{(C)} Power consumption per mol of pump; \textbf{(D)} Pump efficiency. Simulations were run with $\mathrm{[Ca^{2+}]_i = 150 \ nM}$, $\mathrm{pH = 4}$, $\mathrm{[MgADP] = 0.0363 \ mM}$, $\mathrm{[MgATP] = 0.1 \ mM}$, $\mathrm{[Pi] = 15 \ mM}$. Cycling rates were estimated by initialising each pump state to 1/9 fmol, and running the simulation to its steady state.}
+\end{figure}
+
+\begin{figure}
+	\centering
+	(A) \\
+	\includegraphics[width=0.6\linewidth]{Terkildsen_kinetic_fit_KA_comparison.eps} \\
+	(B) \\
+	\includegraphics[width=0.6\linewidth]{Terkildsen_fit_NG_I.eps}
+	\caption{\textbf{Fit of the cardiac Na$^+$/K$^+$ ATPase model to current-voltage measurements.} \textbf{(A)} Comparison of the model to extracellular sodium and voltage data (Nakao and Gadsby, 1989, Fig. 3), with cycling velocities scaled to a value of $55 \ \mathrm{s^{-1}}$ at $V = 40 \ \mathrm{mV}$. \textbf{(B)} Comparison of the model to whole-cell current measurements  (Nakao and Gadsby, 1989, Fig. 2A).  $\mathrm{[Na^+]_i} = 50\ \mathrm{mM}$, $\mathrm{[K^+]_i} = 0\ \mathrm{mM}$, $\mathrm{[K^+]_e} = 5.4\ \mathrm{mM}$, $\mathrm{pH} = 7.4$, $\mathrm{[Pi]_{tot}} = 0\ \mathrm{mM}$, $\mathrm{[MgATP]} = 10\ \mathrm{mM}$, $\mathrm{[MgADP]} = 0\ \mathrm{mM}$, $T = 310\ \mathrm{K}$.} 
+\end{figure}
+
+\begin{figure}
+	\centering
+	(A) \\
+	\includegraphics[width=0.5\linewidth]{Terkildsen_fit_Hansen_Nai_comparison.eps} \\
+	(B) \\
+	\includegraphics[width=0.5\linewidth]{Terkildsen_fit_NG_Ke_comparison.eps} \\
+	(C) \\
+	\includegraphics[width=0.5\linewidth]{Terkildsen_fit_Friedrich_MgATP_comparison.eps}
+	\caption{\textbf{Fit of the cardiac Na$^+$/K$^+$ ATPase model to metabolite dependence data.} \textbf{(A)} Comparison of the model to data with varying intracellular sodium concentrations  (Hansen et al., 2002, Fig. 7A), normalised to the cycling velocity at $\mathrm{[Na^+]_i = 50\ \mathrm{mM}}$. \textbf{(B)} Comparison of the model to data with varying extracellular potassium (Nakao and Gadsby, 1989, Fig. 11A), normalised to the cycling velocity at $\mathrm{[K^+]_e = 5.4\ \mathrm{mM}}$. \textbf{(C)} Comparison of the model to data with varying ATP  (Friedrich et al., 1996, Fig. 3B), normalised to the cycling velocity at $\mathrm{[MgATP] = 0.6\ \mathrm{mM}}$.} 
+\end{figure}
+
+\begin{figure}
+	\centering
+	(A) \\
+	\includegraphics[width=0.7\linewidth]{NaK_eq.eps} \\
+	(B) \\
+	\includegraphics[width=0.7\linewidth]{NaK_DG.eps}
+	\caption{\textbf{Simulation of the Na$^+$/K$^+$ ATPase.} \textbf{(A)} Cycling rates of the pump near reversal potential; \textbf{(B)} Relationship between Gibbs free energy and cycling rate. The curves represent different concentrations of MgATP, from a concentration of 1 mM on the right, with increments of 1 mM up to a concentration of 5mM on the left. The Gibbs free energy was varied by changing the membrane potential. For (A) and (B), simulations were run using $\mathrm{[Na^+]_i} = 10\ \mathrm{mM}$, $\mathrm{[Na^+]_e} = 140\ \mathrm{mM}$, $\mathrm{[K^+]_i} = 145\ \mathrm{mM}$, $\mathrm{[K^+]_e} = 5.4\ \mathrm{mM}$, $\mathrm{pH} = 7.095$, $\mathrm{[Pi]} = 0.3971\ \mathrm{mM}$, $\mathrm{[MgATP]} = 6.95\ \mathrm{mM}$, $\mathrm{[MgADP]} = 0.035\ \mathrm{mM}$. Each pump state was initialised to 1/15 fmol, and steady states were estimated by running each simulation to steady state.}
+\end{figure}
+
+
+
+\end{document}
