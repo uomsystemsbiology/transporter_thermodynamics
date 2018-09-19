@@ -1,4 +1,8 @@
 <?xml version='1.0'?>
+<!-- This model of the Na/K ATPase reproduces Figure 9B for [MgATP] = 1 mM.
+ c_MgATP0 can be changed to 1,2,3,4 or 5 to plot the curve other concentrations of MgATP.-->
+<!-- Note that the steady state was approximated by increasing the membrane potential
+ at a rate slow enough for the transporter to be near steady state.-->
 <model name="Terkildsen_NaK_BG" xmlns="http://www.cellml.org/cellml/1.1#" xmlns:cellml="http://www.cellml.org/cellml/1.1#">
     <units name="J_per_K_per_mol">
         <unit units="joule"/>
@@ -119,26 +123,39 @@
         <variable initial_value="27.9828" name="x_Ke" units="fmol"/>
         <variable initial_value="5510" name="x_Ki" units="fmol"/>
         <variable initial_value="1.33" name="x_MgADP" units="fmol"/>
-        <variable initial_value="264.1" name="x_MgATP" units="fmol"/>
+        <variable initial_value="x_MgATP0" name="x_MgATP" units="fmol"/>
         <variable initial_value="725.48" name="x_Nae" units="fmol"/>
         <variable initial_value="380" name="x_Nai" units="fmol"/>
-        <variable initial_value="0.32211597172164" name="x_P7" units="fmol"/>
+        <variable initial_value="0.331980313955509" name="x_P7" units="fmol"/>
         <variable initial_value="15.0898" name="x_P_i" units="fmol"/>
         <variable initial_value="-61360" name="q_mem" units="fC"/>
-        <variable initial_value="0.00566537072269742" name="x_P14" units="fmol"/>
-        <variable initial_value="0.000280498949981951" name="x_P15" units="fmol"/>
-        <variable initial_value="5.49047345260617e-06" name="x_P1" units="fmol"/>
-        <variable initial_value="0.00127189866632663" name="x_P2" units="fmol"/>
-        <variable initial_value="0.073660569678138" name="x_P3" units="fmol"/>
-        <variable initial_value="0.261209078228753" name="x_P4" units="fmol"/>
-        <variable initial_value="0.231569173626158" name="x_P5" units="fmol"/>
-        <variable initial_value="0.00175427296782287" name="x_P6" units="fmol"/>
-        <variable initial_value="3.12539779097421e-09" name="x_P10" units="fmol"/>
-        <variable initial_value="1.18865626941455e-07" name="x_P11" units="fmol"/>
-        <variable initial_value="1.27960102124627e-06" name="x_P12" units="fmol"/>
-        <variable initial_value="3.21722660821039e-06" name="x_P13" units="fmol"/>
-        <variable initial_value="0.10246805612662" name="x_P8" units="fmol"/>
-        <variable initial_value="1.82434850767215e-11" name="x_P9" units="fmol"/>
+        <variable initial_value="0.0352055084848669" name="x_P14" units="fmol"/>
+        <variable initial_value="0.000250802607996716" name="x_P15" units="fmol"/>
+        <variable initial_value="5.08046762752778e-06" name="x_P1" units="fmol"/>
+        <variable initial_value="0.00117692038835061" name="x_P2" units="fmol"/>
+        <variable initial_value="0.0681600122067962" name="x_P3" units="fmol"/>
+        <variable initial_value="0.24170354694622" name="x_P4" units="fmol"/>
+        <variable initial_value="0.214276996858967" name="x_P5" units="fmol"/>
+        <variable initial_value="0.00162339224076387" name="x_P6" units="fmol"/>
+        <variable initial_value="5.0981140543815e-09" name="x_P10" units="fmol"/>
+        <variable initial_value="1.95553644749923e-07" name="x_P11" units="fmol"/>
+        <variable initial_value="2.53392033375182e-06" name="x_P12" units="fmol"/>
+        <variable initial_value="6.47030714646585e-06" name="x_P13" units="fmol"/>
+        <variable initial_value="0.105613220945029" name="x_P8" units="fmol"/>
+        <variable initial_value="1.88047934975453e-11" name="x_P9" units="fmol"/>
+        <variable initial_value="1" name="c_MgATP0" units="mM"/>
+        <variable name="x_MgATP0" units="fmol"/>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+                <eq/>
+                <ci>x_MgATP0</ci>
+                <apply>
+                    <times/>
+                    <ci>c_MgATP0</ci>
+                    <ci>W_i</ci>
+                </apply>
+            </apply>
+        </math>
         <!-- Volumes-->
         <variable initial_value="38.0" name="W_i" units="pL"/>
         <variable initial_value="5.182" name="W_e" units="pL"/>
@@ -222,6 +239,58 @@
                     <divide/>
                     <ci>x_P_i</ci>
                     <ci>W_i</ci>
+                </apply>
+            </apply>
+        </math>
+        <!-- Output variables-->
+        <variable name="DeltaG" units="J_per_mol"/>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+                <eq/>
+                <ci>DeltaG</ci>
+                <apply>
+                    <minus/>
+                    <apply>
+                        <minus/>
+                        <apply>
+                            <minus/>
+                            <apply>
+                                <minus/>
+                                <apply>
+                                    <plus/>
+                                    <apply>
+                                        <times/>
+                                        <cn cellml:units="dimensionless">3</cn>
+                                        <ci>mu_Nae</ci>
+                                    </apply>
+                                    <apply>
+                                        <times/>
+                                        <cn cellml:units="dimensionless">2</cn>
+                                        <ci>mu_Ki</ci>
+                                    </apply>
+                                    <ci>mu_MgADP</ci>
+                                    <ci>mu_P_i</ci>
+                                    <ci>mu_H</ci>
+                                </apply>
+                                <apply>
+                                    <times/>
+                                    <cn cellml:units="dimensionless">3</cn>
+                                    <ci>mu_Nai</ci>
+                                </apply>
+                            </apply>
+                            <apply>
+                                <times/>
+                                <cn cellml:units="dimensionless">2</cn>
+                                <ci>mu_Ke</ci>
+                            </apply>
+                        </apply>
+                        <ci>mu_MgATP</ci>
+                    </apply>
+                    <apply>
+                        <times/>
+                        <ci>F</ci>
+                        <ci>V_mem</ci>
+                    </apply>
                 </apply>
             </apply>
         </math>

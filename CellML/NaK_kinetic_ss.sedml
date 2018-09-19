@@ -1,26 +1,26 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <sedML level="1" version="2" xmlns="http://sed-ml.org/sed-ml/level1/version2" xmlns:cellml="http://www.cellml.org/cellml/1.1#">
     <listOfSimulations>
-        <uniformTimeCourse id="simulation1" initialTime="0" numberOfPoints="2000" outputEndTime="200" outputStartTime="0">
+        <uniformTimeCourse id="simulation1" initialTime="0" numberOfPoints="1800" outputEndTime="180" outputStartTime="0">
             <algorithm kisaoID="KISAO:0000019">
                 <listOfAlgorithmParameters>
-                    <algorithmParameter kisaoID="KISAO:0000211" value="9.9999999999999995e-07"/>
+                    <algorithmParameter kisaoID="KISAO:0000211" value="9.9999999999999995e-08"/>
                     <algorithmParameter kisaoID="KISAO:0000475" value="BDF"/>
                     <algorithmParameter kisaoID="KISAO:0000481" value="true"/>
                     <algorithmParameter kisaoID="KISAO:0000476" value="Newton"/>
                     <algorithmParameter kisaoID="KISAO:0000477" value="Dense"/>
                     <algorithmParameter kisaoID="KISAO:0000480" value="0"/>
-                    <algorithmParameter kisaoID="KISAO:0000415" value="50000"/>
+                    <algorithmParameter kisaoID="KISAO:0000415" value="500"/>
                     <algorithmParameter kisaoID="KISAO:0000467" value="0"/>
                     <algorithmParameter kisaoID="KISAO:0000478" value="Banded"/>
-                    <algorithmParameter kisaoID="KISAO:0000209" value="1.0000000000000001e-15"/>
+                    <algorithmParameter kisaoID="KISAO:0000209" value="9.9999999999999995e-08"/>
                     <algorithmParameter kisaoID="KISAO:0000479" value="0"/>
                 </listOfAlgorithmParameters>
             </algorithm>
         </uniformTimeCourse>
     </listOfSimulations>
     <listOfModels>
-        <model id="model" language="urn:sedml:language:cellml.1_1" source="Terkildsen_NaK_BG_Fig9C.cellml"/>
+        <model id="model" language="urn:sedml:language:cellml.1_1" source="Terkildsen_NaK_kinetic.cellml"/>
     </listOfModels>
     <listOfTasks>
         <repeatedTask id="repeatedTask" range="once" resetModel="true">
@@ -38,7 +38,7 @@
     <listOfDataGenerators>
         <dataGenerator id="xDataGenerator1_1">
             <listOfVariables>
-                <variable id="xVariable1_1" target="/cellml:model/cellml:component[@name='environment']/cellml:variable[@name='DeltaG']" taskReference="repeatedTask"/>
+                <variable id="xVariable1_1" target="/cellml:model/cellml:component[@name='environment']/cellml:variable[@name='Vm']" taskReference="repeatedTask"/>
             </listOfVariables>
             <math xmlns="http://www.w3.org/1998/Math/MathML">
                 <ci> xVariable1_1 </ci>
@@ -46,7 +46,7 @@
         </dataGenerator>
         <dataGenerator id="yDataGenerator1_1">
             <listOfVariables>
-                <variable id="yVariable1_1" target="/cellml:model/cellml:component[@name='environment']/cellml:variable[@name='v_R1']" taskReference="repeatedTask"/>
+                <variable id="yVariable1_1" target="/cellml:model/cellml:component[@name='environment']/cellml:variable[@name='v_cyc_nak']" taskReference="repeatedTask"/>
             </listOfVariables>
             <math xmlns="http://www.w3.org/1998/Math/MathML">
                 <ci> yVariable1_1 </ci>

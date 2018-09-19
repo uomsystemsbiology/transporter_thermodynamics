@@ -20,7 +20,7 @@
         </uniformTimeCourse>
     </listOfSimulations>
     <listOfModels>
-        <model id="model" language="urn:sedml:language:cellml.1_1" source="Terkildsen_NaK_kinetic_Fig9A.cellml"/>
+        <model id="model" language="urn:sedml:language:cellml.1_1" source="Terkildsen_NaK_BG.cellml"/>
     </listOfModels>
     <listOfTasks>
         <repeatedTask id="repeatedTask" range="once" resetModel="true">
@@ -38,7 +38,7 @@
     <listOfDataGenerators>
         <dataGenerator id="xDataGenerator1_1">
             <listOfVariables>
-                <variable id="xVariable1_1" target="/cellml:model/cellml:component[@name='environment']/cellml:variable[@name='Vm']" taskReference="repeatedTask"/>
+                <variable id="xVariable1_1" target="/cellml:model/cellml:component[@name='environment']/cellml:variable[@name='V_mem']" taskReference="repeatedTask"/>
             </listOfVariables>
             <math xmlns="http://www.w3.org/1998/Math/MathML">
                 <ci> xVariable1_1 </ci>
@@ -46,7 +46,7 @@
         </dataGenerator>
         <dataGenerator id="yDataGenerator1_1">
             <listOfVariables>
-                <variable id="yVariable1_1" target="/cellml:model/cellml:component[@name='environment']/cellml:variable[@name='v_cyc_nak']" taskReference="repeatedTask"/>
+                <variable id="yVariable1_1" target="/cellml:model/cellml:component[@name='environment']/cellml:variable[@name='v_R1']" taskReference="repeatedTask"/>
             </listOfVariables>
             <math xmlns="http://www.w3.org/1998/Math/MathML">
                 <ci> yVariable1_1 </ci>

@@ -1,4 +1,6 @@
 <?xml version='1.0'?>
+<!-- This is the original kinetic model of SERCA by Tran et al.
+ This model reproduces the kinetic curve of Figure 5A-->
 <model cmeta:id="tran_model_2009" name="tran_model_2009" xmlns="http://www.cellml.org/cellml/1.0#" xmlns:cellml="http://www.cellml.org/cellml/1.0#" xmlns:cmeta="http://www.cellml.org/metadata/1.0#">
     <units name="first_order_rate_constant">
         <unit exponent="-1" units="second"/>

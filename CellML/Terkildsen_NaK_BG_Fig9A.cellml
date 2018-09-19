@@ -1,4 +1,8 @@
 <?xml version='1.0'?>
+<!-- This model of the Na/K ATPase reproduces Figure 9A for [MgATP] = 6.95 mM.
+ x_MgATP can be changed to 38.0 to plot the curve for [MgATP] = 1 mM.-->
+<!-- Note that the steady state was approximated by increasing the membrane potential
+ at a rate slow enough for the transporter to be near steady state.-->
 <model name="Terkildsen_NaK_BG" xmlns="http://www.cellml.org/cellml/1.1#" xmlns:cellml="http://www.cellml.org/cellml/1.1#">
     <units name="J_per_K_per_mol">
         <unit units="joule"/>
@@ -115,30 +119,30 @@
             </apply>
         </math>
         <!-- States (and initial conditions)-->
-        <variable initial_value="0.0015128" name="x_H" units="fmol"/>
+        <variable initial_value="0.0030534" name="x_H" units="fmol"/>
         <variable initial_value="27.9828" name="x_Ke" units="fmol"/>
-        <variable initial_value="0.038" name="x_Ki" units="fmol"/>
-        <variable initial_value="0.038" name="x_MgADP" units="fmol"/>
-        <variable initial_value="380" name="x_MgATP" units="fmol"/>
-        <variable initial_value="777.3" name="x_Nae" units="fmol"/>
-        <variable initial_value="1900" name="x_Nai" units="fmol"/>
-        <variable initial_value="0.534480003169437" name="x_P7" units="fmol"/>
-        <variable initial_value="0.038" name="x_P_i" units="fmol"/>
-        <variable initial_value="-18408" name="q_mem" units="fC"/>
-        <variable initial_value="0.00626267917464576" name="x_P14" units="fmol"/>
-        <variable initial_value="0.000446049400255497" name="x_P15" units="fmol"/>
-        <variable initial_value="4.06727417747628e-10" name="x_P1" units="fmol"/>
-        <variable initial_value="1.84495437200145e-09" name="x_P2" units="fmol"/>
-        <variable initial_value="0.00183103460985586" name="x_P3" units="fmol"/>
-        <variable initial_value="0.0324604777886237" name="x_P4" units="fmol"/>
-        <variable initial_value="0.143884405731667" name="x_P5" units="fmol"/>
-        <variable initial_value="0.00968432811008776" name="x_P6" units="fmol"/>
-        <variable initial_value="7.9739635710452e-05" name="x_P10" units="fmol"/>
-        <variable initial_value="0.00282186679243115" name="x_P11" units="fmol"/>
-        <variable initial_value="0.0281498805518011" name="x_P12" units="fmol"/>
-        <variable initial_value="0.0702590453291214" name="x_P13" units="fmol"/>
-        <variable initial_value="0.169644923453282" name="x_P8" units="fmol"/>
-        <variable initial_value="5.63940980127252e-07" name="x_P9" units="fmol"/>
+        <variable initial_value="5510" name="x_Ki" units="fmol"/>
+        <variable initial_value="1.33" name="x_MgADP" units="fmol"/>
+        <variable initial_value="264.1" name="x_MgATP" units="fmol"/>
+        <variable initial_value="725.48" name="x_Nae" units="fmol"/>
+        <variable initial_value="380" name="x_Nai" units="fmol"/>
+        <variable initial_value="0.32211597172164" name="x_P7" units="fmol"/>
+        <variable initial_value="15.0898" name="x_P_i" units="fmol"/>
+        <variable initial_value="-61360" name="q_mem" units="fC"/>
+        <variable initial_value="0.00566537072269742" name="x_P14" units="fmol"/>
+        <variable initial_value="0.000280498949981951" name="x_P15" units="fmol"/>
+        <variable initial_value="5.49047345260617e-06" name="x_P1" units="fmol"/>
+        <variable initial_value="0.00127189866632663" name="x_P2" units="fmol"/>
+        <variable initial_value="0.073660569678138" name="x_P3" units="fmol"/>
+        <variable initial_value="0.261209078228753" name="x_P4" units="fmol"/>
+        <variable initial_value="0.231569173626158" name="x_P5" units="fmol"/>
+        <variable initial_value="0.00175427296782287" name="x_P6" units="fmol"/>
+        <variable initial_value="3.12539779097421e-09" name="x_P10" units="fmol"/>
+        <variable initial_value="1.18865626941455e-07" name="x_P11" units="fmol"/>
+        <variable initial_value="1.27960102124627e-06" name="x_P12" units="fmol"/>
+        <variable initial_value="3.21722660821039e-06" name="x_P13" units="fmol"/>
+        <variable initial_value="0.10246805612662" name="x_P8" units="fmol"/>
+        <variable initial_value="1.82434850767215e-11" name="x_P9" units="fmol"/>
         <!-- Volumes-->
         <variable initial_value="38.0" name="W_i" units="pL"/>
         <variable initial_value="5.182" name="W_e" units="pL"/>

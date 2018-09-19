@@ -1,4 +1,7 @@
 <?xml version='1.0'?>
+<!-- This model simulates an electrogenic model of a transporter at steady state, and reproduces Figure 3 of the manuscript.-->
+<!-- Note that the steady state was approximated by increasing the membrane voltage
+ at a rate slow enough for the transporter to be near steady state.-->
 <model name="charged_species" xmlns="http://www.cellml.org/cellml/1.1#" xmlns:cellml="http://www.cellml.org/cellml/1.1#">
     <units name="J_per_K_per_mol">
         <unit units="joule"/>

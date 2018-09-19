@@ -38,30 +38,30 @@
         <variable initial_value="310" name="T" units="kelvin"/>
         <variable initial_value="96485" name="F" units="C_per_mol"/>
         <!-- Bond graph parameters-->
-        <variable initial_value="159343.664" name="K_1" units="per_fmol"/>
-        <variable initial_value="675.4901" name="K_10" units="per_fmol"/>
-        <variable initial_value="2820.6572" name="K_2" units="per_fmol"/>
-        <variable initial_value="1653.1248" name="K_2a" units="per_fmol"/>
-        <variable initial_value="5690255.054" name="K_4" units="per_fmol"/>
-        <variable initial_value="0.55599" name="K_5" units="per_fmol"/>
-        <variable initial_value="1058849.2033" name="K_6" units="per_fmol"/>
-        <variable initial_value="86.6242" name="K_8" units="per_fmol"/>
-        <variable initial_value="2629.58" name="K_9" units="per_fmol"/>
-        <variable initial_value="1.2989" name="K_Cai" units="per_fmol"/>
-        <variable initial_value="21.6478" name="K_Casr" units="per_fmol"/>
-        <variable initial_value="1334.8712" name="K_H" units="per_fmol"/>
-        <variable initial_value="3.6559e-07" name="K_MgADP" units="per_fmol"/>
-        <variable initial_value="5.9845" name="K_MgATP" units="per_fmol"/>
-        <variable initial_value="0.00081084" name="K_P" units="per_fmol"/>
-        <variable initial_value="0.030348" name="kappa_101" units="fmol_per_sec"/>
-        <variable initial_value="0.00071475" name="kappa_12" units="fmol_per_sec"/>
-        <variable initial_value="15667298.869" name="kappa_22a" units="fmol_per_sec"/>
-        <variable initial_value="4551.6413" name="kappa_24" units="fmol_per_sec"/>
-        <variable initial_value="4551.6413" name="kappa_45" units="fmol_per_sec"/>
-        <variable initial_value="4568.3871" name="kappa_56" units="fmol_per_sec"/>
-        <variable initial_value="122733.0951" name="kappa_68" units="fmol_per_sec"/>
-        <variable initial_value="9849481.5849" name="kappa_89" units="fmol_per_sec"/>
-        <variable initial_value="9849481.5849" name="kappa_910" units="fmol_per_sec"/>
+        <variable initial_value="5263.6085" name="K_1" units="per_fmol"/>
+        <variable initial_value="410.6048" name="K_10" units="per_fmol"/>
+        <variable initial_value="3803.6518" name="K_2" units="per_fmol"/>
+        <variable initial_value="3110.4445" name="K_2a" units="per_fmol"/>
+        <variable initial_value="16520516.1239" name="K_4" units="per_fmol"/>
+        <variable initial_value="0.82914" name="K_5" units="per_fmol"/>
+        <variable initial_value="993148.433" name="K_6" units="per_fmol"/>
+        <variable initial_value="37.7379" name="K_8" units="per_fmol"/>
+        <variable initial_value="2230.2717" name="K_9" units="per_fmol"/>
+        <variable initial_value="1.9058" name="K_Cai" units="per_fmol"/>
+        <variable initial_value="31.764" name="K_Casr" units="per_fmol"/>
+        <variable initial_value="1862.5406" name="K_H" units="per_fmol"/>
+        <variable initial_value="5.8126e-07" name="K_MgADP" units="per_fmol"/>
+        <variable initial_value="244.3021" name="K_MgATP" units="per_fmol"/>
+        <variable initial_value="0.014921" name="K_P" units="per_fmol"/>
+        <variable initial_value="0.049926" name="kappa_101" units="fmol_per_sec"/>
+        <variable initial_value="0.00053004" name="kappa_12" units="fmol_per_sec"/>
+        <variable initial_value="8326784.0537" name="kappa_22a" units="fmol_per_sec"/>
+        <variable initial_value="1567.7476" name="kappa_24" units="fmol_per_sec"/>
+        <variable initial_value="1567.7476" name="kappa_45" units="fmol_per_sec"/>
+        <variable initial_value="3063.4006" name="kappa_56" units="fmol_per_sec"/>
+        <variable initial_value="130852.3839" name="kappa_68" units="fmol_per_sec"/>
+        <variable initial_value="11612934.8748" name="kappa_89" units="fmol_per_sec"/>
+        <variable initial_value="11612934.8748" name="kappa_910" units="fmol_per_sec"/>
         <variable initial_value="2" name="n_Cai" units="dimensionless"/>
         <variable initial_value="2" name="n_Casr" units="dimensionless"/>
         <variable initial_value="2" name="n_H" units="dimensionless"/>

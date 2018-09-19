@@ -1,5 +1,7 @@
 <?xml version='1.0'?>
-<!-- This CellML file describes the coupled transporter model, being simulated to equilibrium.-->
+<!-- This model reproduces Figure 2D, and part of Figure 2E.-->
+<!-- Note that the steady state was approximated by increasing the amount of A
+ at a rate slow enough for the transporter to be near steady state.-->
 <model name="coupled_reactions" xmlns="http://www.cellml.org/cellml/1.1#" xmlns:cellml="http://www.cellml.org/cellml/1.1#">
     <units name="J_per_K_per_mol">
         <unit units="joule"/>

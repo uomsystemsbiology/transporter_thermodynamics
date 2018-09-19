@@ -1,4 +1,6 @@
 <?xml version='1.0'?>
+<!-- This is the updated kinetic model of the Na/K ATPase, and reproduces Figure 7 of the manuscript for [Nae] = 150mM
+ The value of Nae can be changed to reproduce the other curves.-->
 <model name="Terkildsen_NaK_kinetic" xmlns="http://www.cellml.org/cellml/1.1#" xmlns:cellml="http://www.cellml.org/cellml/1.1#">
     <units name="mJ_per_K_per_mol">
         <unit prefix="milli" units="joule"/>
@@ -74,7 +76,7 @@
         <!-- Cell-specific parameters-->
         <variable initial_value="1360.2624" name="pump_density" units="per_um2"/>
         <!-- Voltage and concentrations-->
-        <!-- Set Nae to one of these values: 1.5 mM, 50 mM, 100 mM, 150 mM to reproduce Fig 2a-->
+        <!-- Set Nae to one of these values: 1.5 mM, 50 mM, 100 mM, 150 mM to reproduce Figure 7-->
         <variable initial_value="150" name="Nae" units="mM"/>
         <variable initial_value="-120" name="Vm" units="mV"/>
         <variable initial_value="0" name="Ki" units="mM"/>
