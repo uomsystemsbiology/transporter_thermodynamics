@@ -75,7 +75,7 @@ h3 = figure;
 plot(DG_vec,v_ss_array,'k','LineWidth',2);
 hold on;
 plot(0,0,'k.','MarkerSize',30);
-text(1000,0,'\DeltaG = 0, v_{ss} = 0','FontSize',16,...
+text(1000,0,'\DeltaG = 0, v_{cyc} = 0','FontSize',16,...
     'HorizontalAlignment','left','VerticalAlignment','top');
 xlabel('\DeltaG');
 ylabel('v_{cyc}');

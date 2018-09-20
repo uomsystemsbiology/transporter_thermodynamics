@@ -183,7 +183,7 @@ hold on;
 plot(DG_array_B,v_ss_array_B,'g','LineWidth',2);
 plot(DG_array_Se,v_ss_array_Se,'b','LineWidth',2);
 plot(0,0,'k.','MarkerSize',30);
-text(0,0,'\DeltaG = 0, v_{ss} = 0','FontSize',16,...
+text(0,0,'\DeltaG = 0, v_{cyc} = 0','FontSize',16,...
     'HorizontalAlignment','right','VerticalAlignment','top');
 ylim([-0.01 0.01]);
 xlabel('\DeltaG');
